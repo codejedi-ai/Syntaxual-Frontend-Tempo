@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button"
 import FeatureCard from "@/components/landing/FeatureCard"
 import { Code, Zap, Globe, Shield, Sparkle, Layers } from "lucide-react"
 import CodeEditor from "@/components/landing/CodeEditor"
-import Header from "@/components/Header"
 import { scrollToSection } from "@/utils/scrollUtils"
 import { useRef } from "react"
 import HeroSection from "@/components/landing/HeroSection"
 import FeatureGrid from "@/components/landing/FeatureGrid"
+import Layout from "@/components/Layout"
 
 export default function Home() {
   const handleNavItemClick = (sectionId: string) => {
@@ -15,9 +15,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/30 to-black text-white">
-      <Header onNavItemClick={handleNavItemClick} />
-      
+    <Layout onNavItemClick={handleNavItemClick}>
       {/* Hero Section */}
       <section id="hero" className="container mx-auto py-24 px-4 relative min-h-screen flex items-center">
         <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-fuchsia-600/10 rounded-3xl opacity-30 blur-3xl -z-10"></div>
@@ -33,15 +31,15 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
+                variant="gradient"
                 size="lg" 
-                className="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700"
                 onClick={() => handleNavItemClick("features")}
               >
                 Explore Features
               </Button>
               <Button 
+                variant="gradient"
                 size="lg" 
-                className="border-purple-500 text-white hover:bg-purple-500/10"
                 onClick={() => handleNavItemClick("pricing")}
               >
                 View Pricing
@@ -125,7 +123,7 @@ export default function Home() {
                 Community support
               </li>
             </ul>
-            <Button className="w-full bg-white/10 hover:bg-white/20 text-white">Get Started</Button>
+            <Button variant="subtle" className="w-full">Get Started</Button>
           </div>
 
           {/* Pro Plan */}
@@ -151,7 +149,7 @@ export default function Home() {
                 Code quality metrics
               </li>
             </ul>
-            <Button className="w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700">Subscribe Now</Button>
+            <Button variant="gradient" className="w-full">Subscribe Now</Button>
           </div>
 
           {/* Enterprise Plan */}
@@ -176,7 +174,7 @@ export default function Home() {
                 Dedicated support
               </li>
             </ul>
-            <Button className="w-full bg-white/10 hover:bg-white/20 text-white">Contact Sales</Button>
+            <Button variant="subtle" className="w-full">Contact Sales</Button>
           </div>
         </div>
       </section>
@@ -236,31 +234,12 @@ export default function Home() {
           <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
             Join thousands of developers who are already using Syntaxual to write better code faster.
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700">
+          <Button variant="gradient" size="lg">
             Get Started Now
           </Button>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="container mx-auto py-8 px-4 border-t border-white/10">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text">Syntaxual</h3>
-            <p className="text-white/50">© 2023 Syntaxual. All rights reserved.</p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            <a href="#hero" onClick={(e) => { e.preventDefault(); handleNavItemClick("hero"); }} className="text-white/70 hover:text-white">Home</a>
-            <a href="#features" onClick={(e) => { e.preventDefault(); handleNavItemClick("features"); }} className="text-white/70 hover:text-white">Features</a>
-            <a href="#pricing" onClick={(e) => { e.preventDefault(); handleNavItemClick("pricing"); }} className="text-white/70 hover:text-white">Pricing</a>
-            <a href="#about" onClick={(e) => { e.preventDefault(); handleNavItemClick("about"); }} className="text-white/70 hover:text-white">About</a>
-            <Link to="#" className="text-white/70 hover:text-white">Contact</Link>
-            <Link to="#" className="text-white/70 hover:text-white">Privacy</Link>
-            <Link to="#" className="text-white/70 hover:text-white">Terms</Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </Layout>
   );
 }
 

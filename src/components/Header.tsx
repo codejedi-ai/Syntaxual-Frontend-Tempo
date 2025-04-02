@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
           <Button variant="ghost" className="text-white/70 hover:text-white">
             Login
           </Button>
-          <Button className="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700">
+          <Button variant="gradient">
             Sign Up
           </Button>
         </div>
