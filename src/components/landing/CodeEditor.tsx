@@ -27,7 +27,7 @@ let unusedVariable = 'test';
   className = "",
 }: CodeEditorProps) => {
   const [code, setCode] = useState(initialCode);
-  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [hasSuggestions, setHasSuggestions] = useState(false);
   const [lineCount, setLineCount] = useState(initialCode.split('\n').length);
   const editorRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -46,7 +46,7 @@ let unusedVariable = 'test';
   };
 
   const handleGetSuggestions = () => {
-    setShowSuggestions(!showSuggestions);
+    setHasSuggestions(!hasSuggestions);
   };
 
   // Generate highlighted code
@@ -77,62 +77,74 @@ let unusedVariable = 'test';
             size="sm" 
             className="bg-purple-600 hover:bg-purple-700 text-xs"
           >
-            {showSuggestions ? "Hide Suggestions" : "Get Suggestions"}
+            {hasSuggestions ? "Clear Suggestions" : "Analyze Code"}
           </Button>
         </div>
 
-        {/* Editor content */}
-        <div className="relative flex-1 overflow-hidden flex" ref={editorRef}>
-          {/* Line numbers */}
-          <div className="select-none py-4 pl-4 w-12 bg-slate-950/50 flex-shrink-0">
-            {Array.from({ length: lineCount }).map((_, i) => (
-              <div key={i} className="text-slate-500 text-xs text-right pr-2 font-mono h-6 leading-6">
-                {i + 1}
-              </div>
-            ))}
-          </div>
-
-          {/* Main editor area */}
-          <div className="relative flex-grow overflow-auto">
-            {/* Hidden textarea for editing */}
-            <textarea
-              ref={textareaRef}
-              value={code}
-              onChange={handleCodeChange}
-              className="absolute top-0 left-0 w-full h-full bg-transparent text-transparent caret-white font-mono text-sm p-4 resize-none focus:outline-none border-none z-10"
-              spellCheck="false"
-            />
-
-            {/* Syntax highlighted code */}
-            <pre className="font-mono text-sm p-4 m-0 h-full overflow-auto">
-              <code className="language-javascript" dangerouslySetInnerHTML={highlightedCode()} />
-            </pre>
-          </div>
-
-          {/* Suggestions panel - now positioned to the right */}
-          {showSuggestions && (
-            <div className="border-l border-slate-700/50 w-1/2 max-w-[300px] flex-shrink-0 bg-slate-800/50 p-4 overflow-y-auto">
-              <div className="space-y-4">
-                <div className="bg-slate-700/50 rounded-lg p-3">
-                  <h4 className="text-sm font-semibold text-purple-400 mb-1">Line 1-6</h4>
-                  <p className="text-xs text-slate-300">Consider using const instead of let</p>
-                  <p className="text-xs text-slate-400 mt-1">This variable is never reassigned within its scope</p>
+        {/* Main content container with code editor and suggestions side by side */}
+        <div className="flex flex-1 overflow-hidden">
+          {/* Code editor container */}
+          <div className="flex flex-1 overflow-hidden">
+            {/* Line numbers */}
+            <div className="select-none py-4 pl-4 w-12 bg-slate-950/50 flex-shrink-0">
+              {Array.from({ length: lineCount }).map((_, i) => (
+                <div key={i} className="text-slate-500 text-xs text-right pr-2 font-mono h-6 leading-6">
+                  {i + 1}
                 </div>
-                
-                <div className="bg-slate-700/50 rounded-lg p-3">
-                  <h4 className="text-sm font-semibold text-red-400 mb-1">Line 8</h4>
-                  <p className="text-xs text-slate-300">Remove unused variable</p>
-                  <p className="text-xs text-slate-400 mt-1">This variable is declared but never used in the code</p>
-                </div>
-                
-                <div className="bg-slate-700/50 rounded-lg p-3">
-                  <h4 className="text-sm font-semibold text-yellow-400 mb-1">Line 3-5</h4>
-                  <p className="text-xs text-slate-300">Missing semicolons</p>
-                  <p className="text-xs text-slate-400 mt-1">For consistency, add semicolons at the end of statements</p>
-                </div>
-              </div>
+              ))}
             </div>
-          )}
+
+            {/* Main editor area */}
+            <div className="relative flex-grow overflow-auto" ref={editorRef}>
+              {/* Hidden textarea for editing */}
+              <textarea
+                ref={textareaRef}
+                value={code}
+                onChange={handleCodeChange}
+                className="absolute top-0 left-0 w-full h-full bg-transparent text-transparent caret-white font-mono text-sm p-4 resize-none focus:outline-none border-none z-10"
+                spellCheck="false"
+              />
+
+              {/* Syntax highlighted code */}
+              <pre className="font-mono text-sm p-4 m-0 h-full overflow-auto">
+                <code className="language-javascript" dangerouslySetInnerHTML={highlightedCode()} />
+              </pre>
+            </div>
+          </div>
+
+          {/* Suggestions panel - always visible */}
+          <div className="w-2/5 border-l border-slate-700/50 bg-slate-800/50 overflow-y-auto flex-shrink-0">
+            <div className="p-4">
+              <h3 className="text-sm font-semibold text-white/90 mb-3 border-b border-slate-700/50 pb-2">Suggestions</h3>
+              
+              {hasSuggestions ? (
+                <div className="space-y-4">
+                  <div className="bg-slate-700/50 rounded-lg p-3">
+                    <h4 className="text-sm font-semibold text-purple-400 mb-1">Line 1-6</h4>
+                    <p className="text-xs text-slate-300">Consider using const instead of let</p>
+                    <p className="text-xs text-slate-400 mt-1">This variable is never reassigned within its scope</p>
+                  </div>
+                  
+                  <div className="bg-slate-700/50 rounded-lg p-3">
+                    <h4 className="text-sm font-semibold text-red-400 mb-1">Line 8</h4>
+                    <p className="text-xs text-slate-300">Remove unused variable</p>
+                    <p className="text-xs text-slate-400 mt-1">This variable is declared but never used in the code</p>
+                  </div>
+                  
+                  <div className="bg-slate-700/50 rounded-lg p-3">
+                    <h4 className="text-sm font-semibold text-yellow-400 mb-1">Line 3-5</h4>
+                    <p className="text-xs text-slate-300">Missing semicolons</p>
+                    <p className="text-xs text-slate-400 mt-1">For consistency, add semicolons at the end of statements</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-col items-center justify-center h-48 text-center">
+                  <div className="text-slate-500 text-sm mb-2">No suggestions yet</div>
+                  <p className="text-xs text-slate-400">Click "Analyze Code" to get AI-powered suggestions for your code</p>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </Card>
     </motion.div>
