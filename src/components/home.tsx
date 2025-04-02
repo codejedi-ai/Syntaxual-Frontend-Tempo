@@ -3,10 +3,13 @@ import { Button } from "@/components/ui/button"
 import FeatureCard from "@/components/landing/FeatureCard"
 import { Code, Zap, Globe, Shield, Sparkle, Layers } from "lucide-react"
 import CodeEditor from "@/components/landing/CodeEditor"
+import Header from "@/components/Header"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/30 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/30 to-black text-white pt-16">
+      <Header />
+      
       {/* Hero Section */}
       <section className="container mx-auto py-16 px-4 relative">
         <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-fuchsia-600/10 rounded-3xl opacity-30 blur-3xl -z-10"></div>
@@ -29,7 +32,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="order-first lg:order-last mx-auto">
+          <div className="order-first lg:order-last mx-auto w-full max-w-[90vw] md:max-w-[600px] lg:max-w-[500px] xl:max-w-[650px]">
             <CodeEditor />
           </div>
         </div>
@@ -93,7 +96,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="container mx-auto py-12 px-4 border-t border-white/10">
+      <footer className="container mx-auto py-2 px-4 border-t border-white/10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h3 className="text-2xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text">Syntaxual</h3>
