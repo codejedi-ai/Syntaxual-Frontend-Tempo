@@ -17,39 +17,12 @@ export default function Home() {
   return (
     <Layout onNavItemClick={handleNavItemClick}>
       {/* Hero Section */}
-      <section id="hero" className="container mx-auto py-24 px-4 relative min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-fuchsia-600/10 rounded-3xl opacity-30 blur-3xl -z-10"></div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text">Syntaxual</span>
-              <br />
-              AI Coding Buddy
-            </h1>
-            <p className="text-xl text-white/70 max-w-xl">
-              Your intelligent coding companion that helps you write better code faster. Powered by advanced AI to understand your coding style and needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="gradient"
-                size="lg" 
-                onClick={() => handleNavItemClick("features")}
-              >
-                Explore Features
-              </Button>
-              <Button 
-                variant="gradient"
-                size="lg" 
-                onClick={() => handleNavItemClick("pricing")}
-              >
-                View Pricing
-              </Button>
-            </div>
-          </div>
-          <div className="order-first lg:order-last mx-auto w-full max-w-[90vw] md:max-w-[600px] lg:max-w-[500px] xl:max-w-[650px]">
-            <CodeEditor />
-          </div>
-        </div>
+      <section id="hero">
+        <HeroSection 
+          title="Syntaxual AI Coding Buddy"
+          subtitle="Your intelligent coding companion that helps you write better code faster. Powered by advanced AI to understand your coding style and needs."
+          onGetStarted={() => handleNavItemClick("features")}
+        />
       </section>
 
       {/* Features Section */}
@@ -61,38 +34,41 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <FeatureCard 
-            icon="ai"
-            title="Intelligent Code Completion"
-            description="Get smart code suggestions based on context and your coding patterns."
-          />
-          <FeatureCard 
-            icon="code"
-            title="Code Refactoring"
-            description="Automatically identify and fix code smells and improve your code quality."
-          />
-          <FeatureCard 
-            icon="git"
-            title="Multi-language Support"
-            description="Works with JavaScript, TypeScript, Python, Java, and many more languages."
-          />
-          <FeatureCard 
-            icon="ai"
-            title="Security Analysis"
-            description="Detect potential security vulnerabilities in your code as you type."
-          />
-          <FeatureCard 
-            icon="code"
-            title="AI-Powered Documentation"
-            description="Generate comprehensive documentation for your code with a single click."
-          />
-          <FeatureCard 
-            icon="git"
-            title="Integration Ecosystem"
-            description="Seamlessly integrates with your favorite IDEs and development tools."
-          />
-        </div>
+        <FeatureGrid 
+          features={[
+            {
+              icon: "ai",
+              title: "Intelligent Code Completion",
+              description: "Get smart code suggestions based on context and your coding patterns."
+            },
+            {
+              icon: "code",
+              title: "Code Refactoring",
+              description: "Automatically identify and fix code smells and improve your code quality."
+            },
+            {
+              icon: "git",
+              title: "Multi-language Support",
+              description: "Works with JavaScript, TypeScript, Python, Java, and many more languages."
+            },
+            {
+              icon: "ai",
+              title: "Security Analysis",
+              description: "Detect potential security vulnerabilities in your code as you type."
+            },
+            {
+              icon: "code",
+              title: "AI-Powered Documentation",
+              description: "Generate comprehensive documentation for your code with a single click."
+            },
+            {
+              icon: "git",
+              title: "Integration Ecosystem",
+              description: "Seamlessly integrates with your favorite IDEs and development tools."
+            }
+          ]}
+          className="bg-transparent"
+        />
       </section>
 
       {/* Pricing Section */}

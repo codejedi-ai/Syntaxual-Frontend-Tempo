@@ -88,7 +88,12 @@ let unusedVariable = 'test';
             {/* Line numbers */}
             <div className="select-none py-4 pl-4 w-12 bg-slate-950/50 flex-shrink-0">
               {Array.from({ length: lineCount }).map((_, i) => (
-                <div key={i} className="text-slate-500 text-xs text-right pr-2 font-mono h-6 leading-6">
+                <div key={i} className="text-slate-500 text-xs text-right pr-2 font-mono" 
+                  style={{ 
+                    height: '21px', 
+                    lineHeight: '21px',
+                    fontFamily: '"DejaVu Sans Mono", monospace'
+                  }}>
                   {i + 1}
                 </div>
               ))}
@@ -101,12 +106,29 @@ let unusedVariable = 'test';
                 ref={textareaRef}
                 value={code}
                 onChange={handleCodeChange}
-                className="absolute top-0 left-0 w-full h-full bg-transparent text-transparent caret-white font-mono text-sm p-4 resize-none focus:outline-none border-none z-10"
+                className="absolute top-0 left-0 w-full h-full font-mono text-sm resize-none focus:outline-none border-none z-10 bg-transparent text-transparent caret-white whitespace-pre"
                 spellCheck="false"
+                style={{
+                  fontFamily: '"DejaVu Sans Mono", monospace',
+                  fontSize: '14px',
+                  lineHeight: '21px',
+                  padding: '16px',
+                  margin: '0',
+                  tabSize: 4,
+                }}
               />
 
               {/* Syntax highlighted code */}
-              <pre className="font-mono text-sm p-4 m-0 h-full overflow-auto">
+              <pre 
+                className="font-mono text-sm h-full overflow-auto"
+                style={{
+                  fontFamily: '"DejaVu Sans Mono", monospace',
+                  fontSize: '14px',
+                  lineHeight: '21px',
+                  padding: '16px',
+                  margin: '0',
+                  tabSize: 4,
+                }}>
                 <code className="language-javascript" dangerouslySetInnerHTML={highlightedCode()} />
               </pre>
             </div>
