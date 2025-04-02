@@ -11,6 +11,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.2.3",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.36.5",
     "@hookform/resolvers": "^3.6.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
@@ -40,9 +43,12 @@
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@supabase/supabase-js": "^2.45.6",
+    "@uiw/codemirror-theme-vscode": "^4.23.10",
+    "@uiw/react-codemirror": "^4.23.10",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "codemirror": "^6.0.1",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.1.5",
     "framer-motion": "^12.5.0",
