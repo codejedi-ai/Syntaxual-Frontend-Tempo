@@ -71,6 +71,31 @@ export default function Home() {
         />
       </section>
 
+      {/* Demo Section */}
+      <section id="demo" className="container mx-auto py-12 px-4 h-screen flex flex-col">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience Syntaxual in Action</h2>
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            Try our intelligent code editor with real-time suggestions and analysis.
+          </p>
+        </div>
+        
+        <div className="flex-1 w-full">
+          <CodeEditor 
+            initialCode={`function calculateTotal(items) {
+  let total = 0;
+  items.forEach(item => {
+    total += item.price
+  })
+  return total
+}
+
+let unusedVariable = 'test';`}
+            className="w-full h-full"
+          />
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section id="pricing" className="container mx-auto py-24 px-4 min-h-screen flex flex-col justify-center">
         <div className="text-center mb-16">

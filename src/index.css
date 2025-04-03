@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import DejaVu font */
-@import url('https://cdn.jsdelivr.net/npm/@fontsource/dejavu-sans-mono@4.5.4/index.css');
-
 @layer base {
   :root {
     --background: 280 75% 60%;
