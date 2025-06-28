@@ -165,9 +165,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({ children }) => {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md bg-black border-purple-500/20 text-purple-100">
+      <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-purple-200">Welcome to Syntaxual</DialogTitle>
+          <DialogTitle>Welcome to Syntaxtual</DialogTitle>
         </DialogHeader>
 
         {error && (
