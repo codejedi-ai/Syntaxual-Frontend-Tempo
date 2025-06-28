@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/hooks/useAuth";
+import { AuthModal } from "@/components/auth/AuthModal";
+import { UserProfile } from "@/components/auth/UserProfile";
 
 interface HeaderProps {
   className?: string;
@@ -9,6 +12,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
+  const { user, loading } = useAuth();
+  
   const navItems = [
     { label: "Home", id: "hero" },
     { label: "Features", id: "features" },
@@ -44,12 +49,24 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" className="text-white/70 hover:text-white">
-            Login
-          </Button>
-          <Button variant="gradient">
-            Sign Up
-          </Button>
+          {loading ? (
+            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+          ) : user ? (
+            <UserProfile />
+          ) : (
+            <>
+              <AuthModal>
+                <Button variant="ghost" className="text-white/70 hover:text-white">
+                  Login
+                </Button>
+              </AuthModal>
+              <AuthModal>
+                <Button variant="gradient">
+                  Sign Up
+                </Button>
+              </AuthModal>
+            </>
+          )}
         </div>
       </div>
     </header>

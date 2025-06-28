@@ -1,5 +1,5 @@
 {
-  "name": "starter",
+  "name": "syntaxual-ai",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -47,7 +47,6 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@supabase/supabase-js": "^2.45.6",
     "@uiw/codemirror-theme-vscode": "^4.23.10",
     "@uiw/react-codemirror": "^4.23.10",
     "class-variance-authority": "^0.7.0",
@@ -56,6 +55,7 @@
     "codemirror": "^6.0.1",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.1.5",
+    "firebase": "^11.9.1",
     "framer-motion": "^12.5.0",
     "lucide-react": "^0.394.0",
     "prismjs": "^1.30.0",
