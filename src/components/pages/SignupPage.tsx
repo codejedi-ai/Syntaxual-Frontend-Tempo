@@ -69,9 +69,9 @@ const SignupPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex">
+    <div className="h-screen bg-black text-white flex overflow-hidden">
       {/* Header */}
-      <div className="absolute top-0 left-0 right-0 z-10 p-6">
+      <div className="absolute top-0 left-0 right-0 z-10 p-4">
         <Link to="/" className="inline-flex items-center text-gray-400 hover:text-white transition-colors">
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -81,29 +81,29 @@ const SignupPage: React.FC = () => {
       </div>
 
       {/* Left Side - Email Authentication */}
-      <div className="flex-1 flex items-center justify-center px-12 py-24">
-        <div className="w-full max-w-sm space-y-8">
+      <div className="flex-1 flex items-center justify-center px-8 py-16">
+        <div className="w-full max-w-sm space-y-6">
           <div className="text-center">
-            <h1 className="text-2xl font-semibold text-white mb-2">Create your account</h1>
-            <p className="text-gray-400">Join thousands of developers</p>
+            <h1 className="text-2xl font-semibold text-white mb-1">Create your account</h1>
+            <p className="text-gray-400 text-sm">Join thousands of developers</p>
           </div>
 
           {error && (
-            <Alert variant="destructive" className="bg-red-950/20 border-red-500/30 text-red-300">
-              <AlertDescription>{error}</AlertDescription>
+            <Alert variant="destructive" className="bg-red-950/20 border-red-500/30 text-red-300 py-2">
+              <AlertDescription className="text-sm">{error}</AlertDescription>
             </Alert>
           )}
 
-          <form onSubmit={form.handleSubmit(handleEmailSignup)} className="space-y-6">
-            <div className="space-y-4">
+          <form onSubmit={form.handleSubmit(handleEmailSignup)} className="space-y-4">
+            <div className="space-y-3">
               <div>
-                <Label htmlFor="displayName" className="text-gray-300 text-sm">Full name</Label>
+                <Label htmlFor="displayName" className="text-gray-300 text-xs">Full name</Label>
                 <Input
                   id="displayName"
                   type="text"
                   placeholder="Enter your full name"
                   {...form.register("displayName")}
-                  className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-11"
+                  className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-9 text-sm"
                 />
                 {form.formState.errors.displayName && (
                   <p className="text-red-400 text-xs mt-1">{form.formState.errors.displayName.message}</p>
@@ -111,13 +111,13 @@ const SignupPage: React.FC = () => {
               </div>
 
               <div>
-                <Label htmlFor="email" className="text-gray-300 text-sm">Email</Label>
+                <Label htmlFor="email" className="text-gray-300 text-xs">Email</Label>
                 <Input
                   id="email"
                   type="email"
                   placeholder="Enter your email"
                   {...form.register("email")}
-                  className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-11"
+                  className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-9 text-sm"
                 />
                 {form.formState.errors.email && (
                   <p className="text-red-400 text-xs mt-1">{form.formState.errors.email.message}</p>
@@ -125,13 +125,13 @@ const SignupPage: React.FC = () => {
               </div>
 
               <div>
-                <Label htmlFor="password" className="text-gray-300 text-sm">Password</Label>
+                <Label htmlFor="password" className="text-gray-300 text-xs">Password</Label>
                 <Input
                   id="password"
                   type="password"
                   placeholder="Create a password"
                   {...form.register("password")}
-                  className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-11"
+                  className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-9 text-sm"
                 />
                 {form.formState.errors.password && (
                   <p className="text-red-400 text-xs mt-1">{form.formState.errors.password.message}</p>
@@ -139,13 +139,13 @@ const SignupPage: React.FC = () => {
               </div>
 
               <div>
-                <Label htmlFor="confirmPassword" className="text-gray-300 text-sm">Confirm password</Label>
+                <Label htmlFor="confirmPassword" className="text-gray-300 text-xs">Confirm password</Label>
                 <Input
                   id="confirmPassword"
                   type="password"
                   placeholder="Confirm your password"
                   {...form.register("confirmPassword")}
-                  className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-11"
+                  className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-9 text-sm"
                 />
                 {form.formState.errors.confirmPassword && (
                   <p className="text-red-400 text-xs mt-1">{form.formState.errors.confirmPassword.message}</p>
@@ -155,13 +155,13 @@ const SignupPage: React.FC = () => {
 
             <Button 
               type="submit" 
-              className="w-full bg-white text-black hover:bg-gray-100 disabled:opacity-50 h-11 font-medium" 
+              className="w-full bg-white text-black hover:bg-gray-100 disabled:opacity-50 h-9 font-medium text-sm" 
               disabled={isLoading}
             >
               {isLoading ? "Creating account..." : "Create account"}
             </Button>
 
-            <div className="text-xs text-gray-400 text-center">
+            <div className="text-xs text-gray-400 text-center leading-tight">
               By creating an account, you agree to our{" "}
               <Link to="#" className="text-white hover:underline">Terms</Link>
               {" "}and{" "}
@@ -184,22 +184,22 @@ const SignupPage: React.FC = () => {
       <div className="w-px bg-gray-800"></div>
 
       {/* Right Side - Federated Authentication */}
-      <div className="flex-1 flex items-center justify-center px-12 py-24">
-        <div className="w-full max-w-sm space-y-8">
+      <div className="flex-1 flex items-center justify-center px-8 py-16">
+        <div className="w-full max-w-sm space-y-6">
           <div className="text-center">
-            <h2 className="text-2xl font-semibold text-white mb-2">Continue with</h2>
-            <p className="text-gray-400">Get started in seconds</p>
+            <h2 className="text-2xl font-semibold text-white mb-1">Continue with</h2>
+            <p className="text-gray-400 text-sm">Get started in seconds</p>
           </div>
 
           <div className="space-y-3">
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-gray-700 text-white hover:bg-gray-900 h-11 justify-start"
+              className="w-full bg-transparent border-gray-700 text-white hover:bg-gray-900 h-9 justify-start text-sm"
               onClick={() => handleSocialLogin('google')}
               disabled={isLoading}
             >
-              <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 mr-3" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                 <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
@@ -211,29 +211,29 @@ const SignupPage: React.FC = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-gray-700 text-white hover:bg-gray-900 h-11 justify-start"
+              className="w-full bg-transparent border-gray-700 text-white hover:bg-gray-900 h-9 justify-start text-sm"
               onClick={() => handleSocialLogin('github')}
               disabled={isLoading}
             >
-              <Github className="w-5 h-5 mr-3" />
+              <Github className="w-4 h-4 mr-3" />
               Continue with GitHub
             </Button>
           </div>
 
-          <div className="text-center pt-8">
-            <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
-              <h3 className="text-sm font-medium text-white mb-3">Join the community</h3>
-              <div className="grid grid-cols-2 gap-4 text-center mb-3">
+          <div className="text-center">
+            <div className="bg-gray-900/50 p-3 rounded-lg border border-gray-800">
+              <h3 className="text-sm font-medium text-white mb-2">Join the community</h3>
+              <div className="grid grid-cols-2 gap-3 text-center mb-2">
                 <div>
-                  <div className="text-lg font-semibold text-white">10K+</div>
+                  <div className="text-base font-semibold text-white">10K+</div>
                   <div className="text-xs text-gray-400">Developers</div>
                 </div>
                 <div>
-                  <div className="text-lg font-semibold text-white">1M+</div>
+                  <div className="text-base font-semibold text-white">1M+</div>
                   <div className="text-xs text-gray-400">Lines analyzed</div>
                 </div>
               </div>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-400 leading-tight">
                 Social login creates your profile instantly and gets you started right away.
               </p>
             </div>
