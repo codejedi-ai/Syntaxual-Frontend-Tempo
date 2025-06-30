@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button variant="gradient">
+                <Button className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 text-white">
                   Sign Up
                 </Button>
               </Link>
