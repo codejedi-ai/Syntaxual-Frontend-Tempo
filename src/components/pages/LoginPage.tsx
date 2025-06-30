@@ -35,12 +35,12 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/30 to-black text-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-500/10 via-violet-500/10 to-slate-900 text-white flex items-center justify-center px-4">
       <div className="w-full max-w-md space-y-8">
         {/* Header */}
         <div className="text-center">
           <Link to="/" className="inline-block">
-            <h1 className="text-3xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text">
+            <h1 className="text-3xl font-bold bg-gradient-to-tr from-indigo-400 to-violet-400 text-transparent bg-clip-text">
               Syntaxtual
             </h1>
           </Link>
@@ -60,12 +60,12 @@ const LoginPage: React.FC = () => {
         )}
 
         {/* Login Form */}
-        <div className="space-y-6 bg-purple-900/20 p-6 rounded-lg border border-purple-500/20">
+        <div className="space-y-6 bg-indigo-900/20 p-6 rounded-lg border border-indigo-500/20">
           <div className="space-y-3">
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-black border-purple-500/20 text-purple-300 hover:bg-purple-950/50 hover:text-purple-200 hover:border-purple-400/40"
+              className="w-full bg-slate-900 border-indigo-500/20 text-indigo-300 hover:bg-indigo-950/50 hover:text-indigo-200 hover:border-indigo-400/40"
               onClick={() => handleSocialLogin('google')}
               disabled={isLoading}
             >
@@ -81,7 +81,7 @@ const LoginPage: React.FC = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-black border-purple-500/20 text-purple-300 hover:bg-purple-950/50 hover:text-purple-200 hover:border-purple-400/40"
+              className="w-full bg-slate-900 border-indigo-500/20 text-indigo-300 hover:bg-indigo-950/50 hover:text-indigo-200 hover:border-indigo-400/40"
               onClick={() => handleSocialLogin('github')}
               disabled={isLoading}
             >
@@ -95,7 +95,7 @@ const LoginPage: React.FC = () => {
         <div className="text-center">
           <p className="text-sm text-white/70">
             Don't have an account?{" "}
-            <Link to="/signup" className="text-fuchsia-400 hover:text-fuchsia-300 font-medium">
+            <Link to="/signup" className="text-violet-400 hover:text-violet-300 font-medium">
               Sign up
             </Link>
           </p>

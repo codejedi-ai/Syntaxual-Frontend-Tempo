@@ -107,20 +107,20 @@ let unusedVariable = 'test';`}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {/* Free Plan */}
-          <div className="bg-gradient-to-b from-purple-900/20 to-transparent rounded-xl border border-purple-500/20 p-8 hover:border-purple-500/50 transition-all">
+          <div className="bg-gradient-to-b from-indigo-900/20 to-transparent rounded-xl border border-indigo-500/20 p-8 hover:border-indigo-500/50 transition-all">
             <h3 className="text-xl font-bold mb-2">Free</h3>
             <p className="text-4xl font-bold mb-6">$0<span className="text-lg font-normal text-white/70">/month</span></p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center mr-2">✓</div>
                 Basic code suggestions
               </li>
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center mr-2">✓</div>
                 5 projects
               </li>
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center mr-2">✓</div>
                 Community support
               </li>
             </ul>
@@ -128,50 +128,50 @@ let unusedVariable = 'test';`}
           </div>
 
           {/* Pro Plan */}
-          <div className="bg-gradient-to-b from-fuchsia-900/30 to-transparent rounded-xl border border-fuchsia-500/30 p-8 hover:border-fuchsia-500/60 transition-all transform scale-105 shadow-lg">
-            <div className="bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-4">Most Popular</div>
+          <div className="bg-gradient-to-b from-violet-900/30 to-transparent rounded-xl border border-violet-500/30 p-8 hover:border-violet-500/60 transition-all transform scale-105 shadow-lg">
+            <div className="bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full inline-block mb-4">Most Popular</div>
             <h3 className="text-xl font-bold mb-2">Pro</h3>
             <p className="text-4xl font-bold mb-6">$19<span className="text-lg font-normal text-white/70">/month</span></p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-fuchsia-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-violet-500/20 flex items-center justify-center mr-2">✓</div>
                 Advanced code suggestions
               </li>
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-fuchsia-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-violet-500/20 flex items-center justify-center mr-2">✓</div>
                 Unlimited projects
               </li>
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-fuchsia-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-violet-500/20 flex items-center justify-center mr-2">✓</div>
                 Priority support
               </li>
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-fuchsia-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-violet-500/20 flex items-center justify-center mr-2">✓</div>
                 Code quality metrics
               </li>
             </ul>
-            <Button variant="gradient" className="w-full">Subscribe Now</Button>
+            <Button className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white">Subscribe Now</Button>
           </div>
 
           {/* Enterprise Plan */}
-          <div className="bg-gradient-to-b from-purple-900/20 to-transparent rounded-xl border border-purple-500/20 p-8 hover:border-purple-500/50 transition-all">
+          <div className="bg-gradient-to-b from-indigo-900/20 to-transparent rounded-xl border border-indigo-500/20 p-8 hover:border-indigo-500/50 transition-all">
             <h3 className="text-xl font-bold mb-2">Enterprise</h3>
             <p className="text-4xl font-bold mb-6">$49<span className="text-lg font-normal text-white/70">/month</span></p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center mr-2">✓</div>
                 Everything in Pro
               </li>
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center mr-2">✓</div>
                 Team collaboration
               </li>
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center mr-2">✓</div>
                 Custom integrations
               </li>
               <li className="flex items-center text-white/80">
-                <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
+                <div className="w-5 h-5 rounded-full bg-indigo-500/20 flex items-center justify-center mr-2">✓</div>
                 Dedicated support
               </li>
             </ul>
@@ -190,9 +190,9 @@ let unusedVariable = 'test';`}
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="bg-gradient-to-tr from-purple-900/30 to-fuchsia-900/30 rounded-xl p-8 h-[400px] flex items-center justify-center">
+          <div className="bg-gradient-to-tr from-indigo-900/30 to-violet-900/30 rounded-xl p-8 h-[400px] flex items-center justify-center">
             <div className="text-center">
-              <div className="w-20 h-20 mx-auto bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-full flex items-center justify-center mb-6">
+              <div className="w-20 h-20 mx-auto bg-gradient-to-r from-indigo-600 to-violet-600 rounded-full flex items-center justify-center mb-6">
                 <span className="text-3xl">🚀</span>
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
@@ -203,21 +203,21 @@ let unusedVariable = 'test';`}
           </div>
           
           <div className="space-y-8">
-            <div className="bg-gradient-to-r from-purple-900/20 to-transparent rounded-xl p-6 border-l-4 border-purple-500">
+            <div className="bg-gradient-to-r from-indigo-900/20 to-transparent rounded-xl p-6 border-l-4 border-indigo-500">
               <h4 className="text-xl font-semibold mb-2">Founded by Developers</h4>
               <p className="text-white/70">
                 Created by a team who understands the challenges of modern software development firsthand.
               </p>
             </div>
             
-            <div className="bg-gradient-to-r from-purple-900/20 to-transparent rounded-xl p-6 border-l-4 border-fuchsia-500">
+            <div className="bg-gradient-to-r from-violet-900/20 to-transparent rounded-xl p-6 border-l-4 border-violet-500">
               <h4 className="text-xl font-semibold mb-2">Cutting-Edge AI</h4>
               <p className="text-white/70">
                 We leverage the latest in machine learning to build AI that truly understands code patterns and best practices.
               </p>
             </div>
             
-            <div className="bg-gradient-to-r from-purple-900/20 to-transparent rounded-xl p-6 border-l-4 border-purple-500">
+            <div className="bg-gradient-to-r from-indigo-900/20 to-transparent rounded-xl p-6 border-l-4 border-indigo-500">
               <h4 className="text-xl font-semibold mb-2">Developer-First Philosophy</h4>
               <p className="text-white/70">
                 Every feature we build is designed to fit seamlessly into your workflow and make you more productive.
@@ -229,13 +229,13 @@ let unusedVariable = 'test';`}
 
       {/* CTA Section */}
       <section id="cta" className="container mx-auto py-24 px-4">
-        <div className="bg-gradient-to-r from-purple-900/40 to-fuchsia-900/40 rounded-3xl p-12 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-fuchsia-500/10 rounded-3xl opacity-30 blur-3xl"></div>
+        <div className="bg-gradient-to-r from-indigo-900/40 to-violet-900/40 rounded-3xl p-12 text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-violet-500/10 rounded-3xl opacity-30 blur-3xl"></div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Supercharge Your Coding?</h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
             Join thousands of developers who are already using Syntaxual to write better code faster.
           </p>
-          <Button variant="gradient" size="lg">
+          <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white" size="lg">
             Get Started Now
           </Button>
         </div>
@@ -243,4 +243,3 @@ let unusedVariable = 'test';`}
     </Layout>
   );
 }
-

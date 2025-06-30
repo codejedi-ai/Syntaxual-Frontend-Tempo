@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/">
-            <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text mr-8 cursor-pointer">
+            <h1 className="text-xl font-bold bg-gradient-to-tr from-indigo-400 to-violet-400 text-transparent bg-clip-text mr-8 cursor-pointer">
               Syntaxtual
             </h1>
           </Link>
@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 text-white">
+                <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white">
                   Sign Up
                 </Button>
               </Link>
