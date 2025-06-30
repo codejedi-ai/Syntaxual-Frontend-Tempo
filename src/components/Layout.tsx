@@ -9,7 +9,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, onNavItemClick }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/30 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
       <Header onNavItemClick={onNavItemClick} />
       <main>
         {children}
