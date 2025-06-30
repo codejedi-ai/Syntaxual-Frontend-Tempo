@@ -56,9 +56,9 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
             <UserProfile />
           ) : (
             <>
-              <Link to="/login">
+              <Link to="/signin">
                 <Button variant="ghost" className="text-white/70 hover:text-white">
-                  Login
+                  Sign In
                 </Button>
               </Link>
               <Link to="/signup">
