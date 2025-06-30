@@ -82,10 +82,10 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex">
+    <div className="min-h-screen bg-gradient-to-br from-purple-950 via-purple-900 to-indigo-950 text-white flex">
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 z-10 p-6">
-        <Link to="/" className="inline-flex items-center text-gray-400 hover:text-white transition-colors">
+        <Link to="/" className="inline-flex items-center text-purple-300 hover:text-white transition-colors">
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -98,11 +98,11 @@ const LoginPage: React.FC = () => {
         <div className="w-full max-w-sm space-y-8">
           <div className="text-center">
             <h1 className="text-2xl font-semibold text-white mb-2">Welcome back</h1>
-            <p className="text-gray-400">Sign in to your account</p>
+            <p className="text-purple-300">Sign in to your account</p>
           </div>
 
           {error && (
-            <Alert variant="destructive" className="bg-red-950/20 border-red-500/30 text-red-300">
+            <Alert variant="destructive" className="bg-red-950/30 border-red-500/40 text-red-300">
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
@@ -117,9 +117,9 @@ const LoginPage: React.FC = () => {
                     </svg>
                   </div>
                   <h3 className="text-lg font-medium">Check your email</h3>
-                  <p className="text-gray-400 text-sm">We've sent password reset instructions to your email.</p>
+                  <p className="text-purple-300 text-sm">We've sent password reset instructions to your email.</p>
                   <Button 
-                    className="w-full bg-white text-black hover:bg-gray-100"
+                    className="w-full bg-white text-purple-900 hover:bg-purple-50"
                     onClick={() => {
                       setShowResetForm(false);
                       setResetSuccess(false);
@@ -133,32 +133,32 @@ const LoginPage: React.FC = () => {
                 <>
                   <div className="text-center">
                     <h3 className="text-lg font-medium mb-2">Reset your password</h3>
-                    <p className="text-gray-400 text-sm">Enter your email and we'll send you a reset link</p>
+                    <p className="text-purple-300 text-sm">Enter your email and we'll send you a reset link</p>
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <Label htmlFor="resetEmail" className="text-gray-300 text-sm">Email</Label>
+                      <Label htmlFor="resetEmail" className="text-purple-200 text-sm">Email</Label>
                       <Input
                         id="resetEmail"
                         type="email"
                         placeholder="Enter your email"
                         value={resetEmail}
                         onChange={(e) => setResetEmail(e.target.value)}
-                        className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-11"
+                        className="bg-purple-900/30 border-purple-700/50 text-white placeholder:text-purple-400 focus:border-purple-500 focus:ring-0 h-11"
                       />
                     </div>
                     <div className="flex space-x-3">
                       <Button 
                         onClick={handlePasswordReset} 
                         disabled={isLoading || !resetEmail}
-                        className="flex-1 bg-white text-black hover:bg-gray-100 disabled:opacity-50 h-11"
+                        className="flex-1 bg-white text-purple-900 hover:bg-purple-50 disabled:opacity-50 h-11"
                       >
                         {isLoading ? "Sending..." : "Send reset link"}
                       </Button>
                       <Button 
                         variant="outline" 
                         onClick={() => setShowResetForm(false)}
-                        className="flex-1 bg-transparent border-gray-700 text-gray-300 hover:bg-gray-900 hover:text-white h-11"
+                        className="flex-1 bg-transparent border-purple-600/50 text-purple-200 hover:bg-purple-800/30 hover:text-white h-11"
                       >
                         Cancel
                       </Button>
@@ -171,13 +171,13 @@ const LoginPage: React.FC = () => {
             <form onSubmit={form.handleSubmit(handleEmailLogin)} className="space-y-6">
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="email" className="text-gray-300 text-sm">Email</Label>
+                  <Label htmlFor="email" className="text-purple-200 text-sm">Email</Label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="Enter your email"
                     {...form.register("email")}
-                    className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-11"
+                    className="bg-purple-900/30 border-purple-700/50 text-white placeholder:text-purple-400 focus:border-purple-500 focus:ring-0 h-11"
                   />
                   {form.formState.errors.email && (
                     <p className="text-red-400 text-xs mt-1">{form.formState.errors.email.message}</p>
@@ -185,13 +185,13 @@ const LoginPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="password" className="text-gray-300 text-sm">Password</Label>
+                  <Label htmlFor="password" className="text-purple-200 text-sm">Password</Label>
                   <Input
                     id="password"
                     type="password"
                     placeholder="Enter your password"
                     {...form.register("password")}
-                    className="bg-gray-900 border-gray-700 text-white placeholder:text-gray-500 focus:border-gray-500 focus:ring-0 h-11"
+                    className="bg-purple-900/30 border-purple-700/50 text-white placeholder:text-purple-400 focus:border-purple-500 focus:ring-0 h-11"
                   />
                   {form.formState.errors.password && (
                     <p className="text-red-400 text-xs mt-1">{form.formState.errors.password.message}</p>
@@ -201,7 +201,7 @@ const LoginPage: React.FC = () => {
 
               <Button 
                 type="submit" 
-                className="w-full bg-white text-black hover:bg-gray-100 disabled:opacity-50 h-11 font-medium" 
+                className="w-full bg-white text-purple-900 hover:bg-purple-50 disabled:opacity-50 h-11 font-medium" 
                 disabled={isLoading}
               >
                 {isLoading ? "Signing in..." : "Sign in"}
@@ -210,7 +210,7 @@ const LoginPage: React.FC = () => {
               <div className="text-center">
                 <button 
                   type="button" 
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className="text-purple-300 hover:text-white text-sm transition-colors"
                   onClick={() => setShowResetForm(true)}
                 >
                   Forgot your password?
@@ -220,7 +220,7 @@ const LoginPage: React.FC = () => {
           )}
 
           <div className="text-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-purple-300 text-sm">
               Don't have an account?{" "}
               <Link to="/signup" className="text-white hover:underline">
                 Sign up
@@ -231,21 +231,21 @@ const LoginPage: React.FC = () => {
       </div>
 
       {/* Divider */}
-      <div className="w-px bg-gray-800"></div>
+      <div className="w-px bg-purple-700/30"></div>
 
       {/* Right Side - Federated Authentication */}
       <div className="flex-1 flex items-center justify-center px-12 py-24">
         <div className="w-full max-w-sm space-y-8">
           <div className="text-center">
             <h2 className="text-2xl font-semibold text-white mb-2">Continue with</h2>
-            <p className="text-gray-400">Use your existing accounts</p>
+            <p className="text-purple-300">Use your existing accounts</p>
           </div>
 
           <div className="space-y-3">
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-gray-700 text-white hover:bg-gray-900 h-11 justify-start"
+              className="w-full bg-transparent border-purple-600/50 text-white hover:bg-purple-800/30 h-11 justify-start"
               onClick={() => handleSocialLogin('google')}
               disabled={isLoading}
             >
@@ -261,7 +261,7 @@ const LoginPage: React.FC = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-gray-700 text-white hover:bg-gray-900 h-11 justify-start"
+              className="w-full bg-transparent border-purple-600/50 text-white hover:bg-purple-800/30 h-11 justify-start"
               onClick={() => handleSocialLogin('github')}
               disabled={isLoading}
             >
@@ -271,9 +271,9 @@ const LoginPage: React.FC = () => {
           </div>
 
           <div className="text-center pt-8">
-            <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+            <div className="bg-purple-900/30 p-4 rounded-lg border border-purple-700/30">
               <h3 className="text-sm font-medium text-white mb-2">Why use social login?</h3>
-              <ul className="text-xs text-gray-400 space-y-1">
+              <ul className="text-xs text-purple-300 space-y-1">
                 <li>• Faster and more secure</li>
                 <li>• No need to remember passwords</li>
                 <li>• Automatic profile setup</li>
