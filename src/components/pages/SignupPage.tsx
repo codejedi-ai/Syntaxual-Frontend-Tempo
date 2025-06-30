@@ -77,7 +77,7 @@ const SignupPage: React.FC = () => {
       <Button
         type="button"
         variant="outline"
-        className="w-full bg-black border-gray-500/20 text-gray-300 hover:bg-gray-800/50 hover:text-gray-200 hover:border-gray-400/40"
+        className="w-full bg-black border-purple-500/20 text-purple-300 hover:bg-purple-950/50 hover:text-purple-200 hover:border-purple-400/40"
         onClick={() => handleSocialLogin('google')}
         disabled={isLoading}
       >
@@ -93,7 +93,7 @@ const SignupPage: React.FC = () => {
       <Button
         type="button"
         variant="outline"
-        className="w-full bg-black border-gray-500/20 text-gray-300 hover:bg-gray-800/50 hover:text-gray-200 hover:border-gray-400/40"
+        className="w-full bg-black border-purple-500/20 text-purple-300 hover:bg-purple-950/50 hover:text-purple-200 hover:border-purple-400/40"
         onClick={() => handleSocialLogin('github')}
         disabled={isLoading}
       >
@@ -104,7 +104,7 @@ const SignupPage: React.FC = () => {
       <Button
         type="button"
         variant="outline"
-        className="w-full bg-black border-gray-500/20 text-gray-300 hover:bg-gray-800/50 hover:text-gray-200 hover:border-gray-400/40"
+        className="w-full bg-black border-purple-500/20 text-purple-300 hover:bg-purple-950/50 hover:text-purple-200 hover:border-purple-400/40"
         onClick={() => handleSocialLogin('twitter')}
         disabled={isLoading}
       >
@@ -115,7 +115,7 @@ const SignupPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/30 to-black text-white flex items-center justify-center px-4">
       <div className="w-full max-w-md space-y-8">
         {/* Header */}
         <div className="text-center">
@@ -140,15 +140,15 @@ const SignupPage: React.FC = () => {
         )}
 
         {/* Signup Form */}
-        <div className="space-y-6 bg-gray-900/50 p-6 rounded-lg border border-gray-500/20">
+        <div className="space-y-6 bg-purple-900/20 p-6 rounded-lg border border-purple-500/20">
           <SocialLoginButtons />
           
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-gray-500/30" />
+              <span className="w-full border-t border-purple-500/30" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-gray-900/50 px-2 text-gray-400">
+              <span className="bg-purple-900/20 px-2 text-purple-400">
                 Or create account with email
               </span>
             </div>
@@ -156,13 +156,13 @@ const SignupPage: React.FC = () => {
 
           <form onSubmit={form.handleSubmit(handleEmailSignup)} className="space-y-4">
             <div>
-              <Label htmlFor="displayName" className="text-gray-300">Display Name</Label>
+              <Label htmlFor="displayName" className="text-purple-300">Display Name</Label>
               <Input
                 id="displayName"
                 type="text"
                 placeholder="Enter your display name"
                 {...form.register("displayName")}
-                className="bg-black border-gray-500/30 text-gray-100 placeholder:text-gray-400/70 focus:border-gray-400"
+                className="bg-black border-purple-500/30 text-purple-100 placeholder:text-purple-400/70 focus:border-fuchsia-400"
               />
               {form.formState.errors.displayName && (
                 <p className="text-sm text-red-400">{form.formState.errors.displayName.message}</p>
@@ -170,13 +170,13 @@ const SignupPage: React.FC = () => {
             </div>
 
             <div>
-              <Label htmlFor="email" className="text-gray-300">Email</Label>
+              <Label htmlFor="email" className="text-purple-300">Email</Label>
               <Input
                 id="email"
                 type="email"
                 placeholder="Enter your email"
                 {...form.register("email")}
-                className="bg-black border-gray-500/30 text-gray-100 placeholder:text-gray-400/70 focus:border-gray-400"
+                className="bg-black border-purple-500/30 text-purple-100 placeholder:text-purple-400/70 focus:border-fuchsia-400"
               />
               {form.formState.errors.email && (
                 <p className="text-sm text-red-400">{form.formState.errors.email.message}</p>
@@ -184,13 +184,13 @@ const SignupPage: React.FC = () => {
             </div>
 
             <div>
-              <Label htmlFor="password" className="text-gray-300">Password</Label>
+              <Label htmlFor="password" className="text-purple-300">Password</Label>
               <Input
                 id="password"
                 type="password"
                 placeholder="Create a password"
                 {...form.register("password")}
-                className="bg-black border-gray-500/30 text-gray-100 placeholder:text-gray-400/70 focus:border-gray-400"
+                className="bg-black border-purple-500/30 text-purple-100 placeholder:text-purple-400/70 focus:border-fuchsia-400"
               />
               {form.formState.errors.password && (
                 <p className="text-sm text-red-400">{form.formState.errors.password.message}</p>
@@ -198,13 +198,13 @@ const SignupPage: React.FC = () => {
             </div>
 
             <div>
-              <Label htmlFor="confirmPassword" className="text-gray-300">Confirm Password</Label>
+              <Label htmlFor="confirmPassword" className="text-purple-300">Confirm Password</Label>
               <Input
                 id="confirmPassword"
                 type="password"
                 placeholder="Confirm your password"
                 {...form.register("confirmPassword")}
-                className="bg-black border-gray-500/30 text-gray-100 placeholder:text-gray-400/70 focus:border-gray-400"
+                className="bg-black border-purple-500/30 text-purple-100 placeholder:text-purple-400/70 focus:border-fuchsia-400"
               />
               {form.formState.errors.confirmPassword && (
                 <p className="text-sm text-red-400">{form.formState.errors.confirmPassword.message}</p>
@@ -213,7 +213,7 @@ const SignupPage: React.FC = () => {
 
             <Button 
               type="submit" 
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white disabled:bg-blue-600/50" 
+              className="w-full bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 text-white disabled:opacity-50" 
               disabled={isLoading}
             >
               {isLoading ? "Creating account..." : "Create Account"}
@@ -225,7 +225,7 @@ const SignupPage: React.FC = () => {
         <div className="text-center">
           <p className="text-sm text-white/70">
             Already have an account?{" "}
-            <Link to="/login" className="text-blue-400 hover:text-blue-300 font-medium">
+            <Link to="/login" className="text-fuchsia-400 hover:text-fuchsia-300 font-medium">
               Sign in
             </Link>
           </p>
