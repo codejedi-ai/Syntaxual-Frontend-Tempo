@@ -221,11 +221,11 @@ const SignupPage: React.FC = () => {
           </form>
         </div>
 
-        {/* Sign In Link */}
+        {/* Login Link */}
         <div className="text-center">
           <p className="text-sm text-white/70">
             Already have an account?{" "}
-            <Link to="/signin" className="text-purple-400 hover:text-purple-300 font-medium">
+            <Link to="/login" className="text-purple-400 hover:text-purple-300 font-medium">
               Sign in
             </Link>
           </p>

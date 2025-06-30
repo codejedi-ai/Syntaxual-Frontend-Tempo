@@ -11,7 +11,7 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signin" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
         </Routes>
         {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}

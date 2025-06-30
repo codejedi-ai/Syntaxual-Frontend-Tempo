@@ -166,7 +166,7 @@ const LoginPage: React.FC = () => {
                     setResetEmail("");
                   }}
                 >
-                  Back to Sign In
+                  Back to Login
                 </Button>
               </div>
             ) : (
