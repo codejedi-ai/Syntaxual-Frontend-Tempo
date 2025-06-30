@@ -15,10 +15,7 @@ const HeroSection = ({
   subtitle = "AI-powered code analysis that helps you write better, cleaner, and more maintainable code.",
 }: HeroSectionProps) => {
   return (
-    <section className="relative w-full min-h-[600px] bg-slate-900 flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-violet-500/10 to-slate-900" />
-
+    <section className="relative w-full min-h-[600px] bg-gradient-to-b from-black via-purple-950/30 to-black flex items-center justify-center overflow-hidden">
       {/* Content container */}
       <div className="relative z-10 container mx-auto px-4 py-16 flex flex-col items-center text-center">
         <motion.div
