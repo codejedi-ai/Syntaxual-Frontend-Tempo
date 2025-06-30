@@ -69,11 +69,11 @@ const SignupPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/30 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-violet-950 to-indigo-950 text-white">
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 z-10 p-6">
         <Link to="/" className="inline-block">
-          <h1 className="text-2xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-200 via-violet-300 to-indigo-300 text-transparent bg-clip-text">
             Syntaxtual
           </h1>
         </Link>
@@ -81,13 +81,13 @@ const SignupPage: React.FC = () => {
 
       <div className="flex min-h-screen">
         {/* Left Side - Email Authentication */}
-        <div className="flex-1 flex items-center justify-center px-8 py-16">
+        <div className="flex-1 flex items-center justify-center px-8 py-16 bg-gradient-to-br from-slate-900/50 to-violet-900/30">
           <div className="w-full max-w-md space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold text-white">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-100 to-violet-200 text-transparent bg-clip-text">
                 Create your account
               </h2>
-              <p className="mt-2 text-lg text-white/70">
+              <p className="mt-2 text-lg text-slate-300">
                 Join thousands of developers
               </p>
             </div>
@@ -98,16 +98,16 @@ const SignupPage: React.FC = () => {
               </Alert>
             )}
 
-            <form onSubmit={form.handleSubmit(handleEmailSignup)} className="space-y-6 bg-purple-900/20 p-8 rounded-xl border border-purple-500/20">
+            <form onSubmit={form.handleSubmit(handleEmailSignup)} className="space-y-6 bg-slate-800/40 backdrop-blur-sm p-8 rounded-xl border border-violet-500/30 shadow-xl">
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="displayName" className="text-purple-300 text-base">Display Name</Label>
+                  <Label htmlFor="displayName" className="text-violet-300 text-base">Display Name</Label>
                   <Input
                     id="displayName"
                     type="text"
                     placeholder="Enter your display name"
                     {...form.register("displayName")}
-                    className="bg-black border-purple-500/30 text-purple-100 placeholder:text-purple-400/70 focus:border-purple-400 h-12 text-base"
+                    className="bg-slate-900/50 border-violet-500/40 text-slate-100 placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-400/20 h-12 text-base"
                   />
                   {form.formState.errors.displayName && (
                     <p className="text-sm text-red-400 mt-1">{form.formState.errors.displayName.message}</p>
@@ -115,13 +115,13 @@ const SignupPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-purple-300 text-base">Email</Label>
+                  <Label htmlFor="email" className="text-violet-300 text-base">Email</Label>
                   <Input
                     id="email"
                     type="email"
                     placeholder="Enter your email"
                     {...form.register("email")}
-                    className="bg-black border-purple-500/30 text-purple-100 placeholder:text-purple-400/70 focus:border-purple-400 h-12 text-base"
+                    className="bg-slate-900/50 border-violet-500/40 text-slate-100 placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-400/20 h-12 text-base"
                   />
                   {form.formState.errors.email && (
                     <p className="text-sm text-red-400 mt-1">{form.formState.errors.email.message}</p>
@@ -129,13 +129,13 @@ const SignupPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="password" className="text-purple-300 text-base">Password</Label>
+                  <Label htmlFor="password" className="text-violet-300 text-base">Password</Label>
                   <Input
                     id="password"
                     type="password"
                     placeholder="Create a password"
                     {...form.register("password")}
-                    className="bg-black border-purple-500/30 text-purple-100 placeholder:text-purple-400/70 focus:border-purple-400 h-12 text-base"
+                    className="bg-slate-900/50 border-violet-500/40 text-slate-100 placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-400/20 h-12 text-base"
                   />
                   {form.formState.errors.password && (
                     <p className="text-sm text-red-400 mt-1">{form.formState.errors.password.message}</p>
@@ -143,13 +143,13 @@ const SignupPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="confirmPassword" className="text-purple-300 text-base">Confirm Password</Label>
+                  <Label htmlFor="confirmPassword" className="text-violet-300 text-base">Confirm Password</Label>
                   <Input
                     id="confirmPassword"
                     type="password"
                     placeholder="Confirm your password"
                     {...form.register("confirmPassword")}
-                    className="bg-black border-purple-500/30 text-purple-100 placeholder:text-purple-400/70 focus:border-purple-400 h-12 text-base"
+                    className="bg-slate-900/50 border-violet-500/40 text-slate-100 placeholder:text-slate-400 focus:border-indigo-400 focus:ring-indigo-400/20 h-12 text-base"
                   />
                   {form.formState.errors.confirmPassword && (
                     <p className="text-sm text-red-400 mt-1">{form.formState.errors.confirmPassword.message}</p>
@@ -159,24 +159,24 @@ const SignupPage: React.FC = () => {
 
               <Button 
                 type="submit" 
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white disabled:bg-purple-600/50 h-12 text-base font-semibold" 
+                className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white disabled:opacity-50 h-12 text-base font-semibold shadow-lg" 
                 disabled={isLoading}
               >
                 {isLoading ? "Creating account..." : "Create Account"}
               </Button>
 
-              <div className="text-xs text-white/60 text-center">
+              <div className="text-xs text-slate-400 text-center">
                 By creating an account, you agree to our{" "}
-                <Link to="#" className="text-purple-400 hover:text-purple-300">Terms of Service</Link>
+                <Link to="#" className="text-violet-400 hover:text-indigo-300">Terms of Service</Link>
                 {" "}and{" "}
-                <Link to="#" className="text-purple-400 hover:text-purple-300">Privacy Policy</Link>
+                <Link to="#" className="text-violet-400 hover:text-indigo-300">Privacy Policy</Link>
               </div>
             </form>
 
             <div className="text-center">
-              <p className="text-white/70">
+              <p className="text-slate-400">
                 Already have an account?{" "}
-                <Link to="/login" className="text-fuchsia-400 hover:text-fuchsia-300 font-medium">
+                <Link to="/login" className="text-indigo-400 hover:text-violet-300 font-medium">
                   Sign in
                 </Link>
               </p>
@@ -185,16 +185,16 @@ const SignupPage: React.FC = () => {
         </div>
 
         {/* Divider */}
-        <div className="w-px bg-gradient-to-b from-transparent via-purple-500/30 to-transparent"></div>
+        <div className="w-px bg-gradient-to-b from-transparent via-violet-500/50 via-indigo-500/50 to-transparent"></div>
 
         {/* Right Side - Federated Authentication */}
-        <div className="flex-1 flex items-center justify-center px-8 py-16">
+        <div className="flex-1 flex items-center justify-center px-8 py-16 bg-gradient-to-bl from-indigo-900/50 to-slate-900/30">
           <div className="w-full max-w-md space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold text-white">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-200 to-slate-100 text-transparent bg-clip-text">
                 Quick Sign Up
               </h2>
-              <p className="mt-2 text-lg text-white/70">
+              <p className="mt-2 text-lg text-slate-300">
                 Get started in seconds
               </p>
             </div>
@@ -203,7 +203,7 @@ const SignupPage: React.FC = () => {
               <Button
                 type="button"
                 variant="outline"
-                className="w-full bg-black border-purple-500/20 text-purple-300 hover:bg-purple-950/50 hover:text-purple-200 hover:border-purple-400/40 h-14 text-base"
+                className="w-full bg-slate-800/40 backdrop-blur-sm border-indigo-500/30 text-slate-200 hover:bg-indigo-900/40 hover:text-indigo-200 hover:border-indigo-400/50 h-14 text-base shadow-lg transition-all duration-200"
                 onClick={() => handleSocialLogin('google')}
                 disabled={isLoading}
               >
@@ -219,7 +219,7 @@ const SignupPage: React.FC = () => {
               <Button
                 type="button"
                 variant="outline"
-                className="w-full bg-black border-purple-500/20 text-purple-300 hover:bg-purple-950/50 hover:text-purple-200 hover:border-purple-400/40 h-14 text-base"
+                className="w-full bg-slate-800/40 backdrop-blur-sm border-violet-500/30 text-slate-200 hover:bg-violet-900/40 hover:text-violet-200 hover:border-violet-400/50 h-14 text-base shadow-lg transition-all duration-200"
                 onClick={() => handleSocialLogin('github')}
                 disabled={isLoading}
               >
@@ -229,20 +229,36 @@ const SignupPage: React.FC = () => {
             </div>
 
             <div className="text-center pt-8">
-              <div className="bg-purple-900/20 p-6 rounded-xl border border-purple-500/20">
-                <h3 className="text-lg font-semibold text-white mb-3">Join the community</h3>
-                <div className="grid grid-cols-2 gap-4 text-sm text-white/70">
+              <div className="bg-slate-800/30 backdrop-blur-sm p-6 rounded-xl border border-indigo-500/20 shadow-lg">
+                <h3 className="text-lg font-semibold text-slate-100 mb-3">Join the community</h3>
+                <div className="grid grid-cols-2 gap-4 text-sm text-slate-300">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-fuchsia-400">10K+</div>
+                    <div className="text-2xl font-bold bg-gradient-to-r from-violet-400 to-indigo-400 text-transparent bg-clip-text">10K+</div>
                     <div>Developers</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-fuchsia-400">1M+</div>
+                    <div className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-slate-400 text-transparent bg-clip-text">1M+</div>
                     <div>Lines Analyzed</div>
                   </div>
                 </div>
-                <div className="mt-4 text-xs text-white/60">
+                <div className="mt-4 text-xs text-slate-400">
                   Social login automatically creates your profile and gets you started instantly.
+                </div>
+                
+                {/* Feature highlights with color-coded bullets */}
+                <div className="mt-4 space-y-2 text-xs text-left">
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-slate-400 rounded-full mr-2"></span>
+                    <span className="text-slate-300">Real-time code analysis</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-violet-400 rounded-full mr-2"></span>
+                    <span className="text-slate-300">AI-powered suggestions</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                    <span className="text-slate-300">Multi-language support</span>
+                  </div>
                 </div>
               </div>
             </div>
