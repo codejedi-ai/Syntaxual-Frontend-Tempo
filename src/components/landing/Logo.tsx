@@ -67,8 +67,8 @@ const Logo = ({ className = "" }: LogoProps) => {
       
       // Draw glow effect
       ctx.shadowBlur = 10 + Math.sin(frame / 20) * 5;
-      ctx.shadowColor = "rgba(99, 102, 241, 0.8)"; // indigo-500
-      ctx.fillStyle = "rgba(79, 70, 229, 0.9)"; // indigo-600
+      ctx.shadowColor = "rgba(236, 72, 153, 0.8)";
+      ctx.fillStyle = "rgba(219, 39, 119, 0.9)";
       
       // Draw { and }
       ctx.fillText("{", 40, 60);
@@ -87,8 +87,8 @@ const Logo = ({ className = "" }: LogoProps) => {
           pulseSize * 2
         );
         
-        gradient.addColorStop(0, "rgba(139, 92, 246, 0.8)"); // violet-500
-        gradient.addColorStop(1, "rgba(109, 40, 217, 0)"); // violet-600
+        gradient.addColorStop(0, "rgba(236, 72, 153, 0.8)");
+        gradient.addColorStop(1, "rgba(190, 24, 93, 0)");
         
         ctx.beginPath();
         ctx.fillStyle = gradient;
@@ -126,7 +126,7 @@ const Logo = ({ className = "" }: LogoProps) => {
         style={{ mixBlendMode: "screen" }}
       />
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-2xl font-bold text-indigo-500"></div>
+        <div className="text-2xl font-bold text-pink-500"></div>
       </div>
     </motion.div>
   );

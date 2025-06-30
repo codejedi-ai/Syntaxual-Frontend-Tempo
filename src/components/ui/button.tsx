@@ -20,7 +20,7 @@ const buttonVariants = cva(
         ghost: "hover:text-white",
         link: "text-primary underline-offset-4 hover:underline",
         gradient: 
-          "bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-2 border-transparent hover:border-transparent hover:rgb-border-animation hover:bg-gradient-to-r hover:from-indigo-500 hover:to-violet-500 hover:before:absolute hover:before:inset-0 hover:before:bg-white/10 hover:before:rounded-md",
+          "bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white border-2 border-transparent hover:border-transparent hover:rgb-border-animation hover:bg-gradient-to-r hover:from-purple-500 hover:to-fuchsia-500 hover:before:absolute hover:before:inset-0 hover:before:bg-white/10 hover:before:rounded-md",
         subtle:
           "bg-white/10 text-white border-2 border-transparent hover:border-transparent hover:rgb-border-animation hover:bg-white/15",
       },
