@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/">
-            <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text mr-8">
+            <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text mr-8 cursor-pointer">
               Syntaxtual
             </h1>
           </Link>
