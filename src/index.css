@@ -4,72 +4,65 @@
 
 @layer base {
   :root {
-    --background: 220 39% 11%;
-    --foreground: 210 40% 98%;
+    --background: 280 75% 60%;
+    --foreground: 222.2 84% 4.9%;
 
-    --card: 220 39% 11%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 220 39% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 238 75% 65%;
+    --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 238 75% 65%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 62% 30%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 238 75% 65%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    /* Custom gradient variables for consistent theming */
-    --gradient-primary: linear-gradient(135deg, rgb(99 102 241 / 0.1) 0%, rgb(139 92 246 / 0.1) 50%, rgb(15 23 42) 100%);
-    --gradient-card: linear-gradient(135deg, rgb(99 102 241 / 0.05) 0%, rgb(139 92 246 / 0.05) 100%);
-    --gradient-button: linear-gradient(135deg, rgb(79 70 229) 0%, rgb(109 40 217) 100%);
-    --gradient-button-hover: linear-gradient(135deg, rgb(99 102 241) 0%, rgb(139 92 246) 100%);
-    --gradient-text: linear-gradient(135deg, rgb(129 140 248) 0%, rgb(196 181 253) 100%);
   }
 
   .dark {
-    --background: 220 39% 11%;
+    --background: 250 50% 15%;
     --foreground: 210 40% 98%;
 
-    --card: 220 39% 11%;
+    --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 39% 11%;
+    --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 238 75% 65%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217 32% 17%;
+    --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 238 75% 65%;
+    --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62% 30%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 238 75% 65%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
@@ -77,226 +70,7 @@
   * {
     @apply border-border;
   }
-  
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(180deg, rgb(99 102 241 / 0.1) 0%, rgb(139 92 246 / 0.1) 50%, rgb(15 23 42) 100%);
-    min-height: 100vh;
-  }
-
-  /* Custom scrollbar styling */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-slate-900;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-indigo-600 to-violet-600 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gradient-to-b from-indigo-500 to-violet-500;
-  }
-
-  /* Selection styling */
-  ::selection {
-    @apply bg-indigo-500/30 text-white;
-  }
-
-  ::-moz-selection {
-    @apply bg-indigo-500/30 text-white;
-  }
-}
-
-@layer components {
-  /* Custom gradient utilities */
-  .gradient-primary {
-    background: var(--gradient-primary);
-  }
-
-  .gradient-card {
-    background: var(--gradient-card);
-  }
-
-  .gradient-button {
-    background: var(--gradient-button);
-  }
-
-  .gradient-button:hover {
-    background: var(--gradient-button-hover);
-  }
-
-  .gradient-text {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Custom animations */
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-
-  @keyframes glow {
-    from {
-      box-shadow: 0 0 20px rgb(99 102 241 / 0.3);
-    }
-    to {
-      box-shadow: 0 0 30px rgb(139 92 246 / 0.5);
-    }
-  }
-
-  /* Backdrop blur utilities */
-  .backdrop-blur-glass {
-    backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(99, 102, 241, 0.1);
-  }
-
-  /* Custom focus styles */
-  .focus-indigo {
-    @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900;
-  }
-
-  .focus-violet {
-    @apply focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-slate-900;
-  }
-}
-
-@layer utilities {
-  /* Text gradient utilities */
-  .text-gradient-indigo-violet {
-    @apply bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent;
-  }
-
-  .text-gradient-violet-indigo {
-    @apply bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent;
-  }
-
-  /* Border gradient utilities */
-  .border-gradient-indigo-violet {
-    border-image: linear-gradient(135deg, rgb(99 102 241), rgb(139 92 246)) 1;
-  }
-
-  /* Background gradient utilities */
-  .bg-gradient-primary {
-    background: linear-gradient(135deg, rgb(99 102 241 / 0.1) 0%, rgb(139 92 246 / 0.1) 50%, rgb(15 23 42) 100%);
-  }
-
-  .bg-gradient-card {
-    background: linear-gradient(135deg, rgb(99 102 241 / 0.05) 0%, rgb(139 92 246 / 0.05) 100%);
-  }
-
-  /* Glass morphism effect */
-  .glass-morphism {
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(99, 102, 241, 0.1);
-  }
-
-  /* Hover effects */
-  .hover-lift {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
-  }
-
-  /* Custom shadows */
-  .shadow-indigo {
-    box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.2);
-  }
-
-  .shadow-violet {
-    box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.2);
-  }
-
-  .shadow-indigo-lg {
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
-  }
-
-  .shadow-violet-lg {
-    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
-  }
-}
-
-/* Custom animations for enhanced UX */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.animate-slide-in-left {
-  animation: slideInFromLeft 0.6s ease-out;
-}
-
-.animate-slide-in-right {
-  animation: slideInFromRight 0.6s ease-out;
-}
-
-/* Responsive typography improvements */
-@media (max-width: 640px) {
-  .text-responsive-xl {
-    @apply text-2xl;
-  }
-  
-  .text-responsive-2xl {
-    @apply text-3xl;
-  }
-  
-  .text-responsive-3xl {
-    @apply text-4xl;
-  }
-}
-
-@media (min-width: 641px) {
-  .text-responsive-xl {
-    @apply text-3xl;
-  }
-  
-  .text-responsive-2xl {
-    @apply text-4xl;
-  }
-  
-  .text-responsive-3xl {
-    @apply text-5xl;
   }
 }
