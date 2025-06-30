@@ -245,7 +245,7 @@ const LoginPage: React.FC = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-purple-600/50 text-white hover:bg-purple-800/30 h-11 justify-start"
+              className="w-full bg-transparent border-purple-600/50 text-white hover:bg-purple-800/30 hover:text-indigo-400 h-11 justify-start"
               onClick={() => handleSocialLogin('google')}
               disabled={isLoading}
             >
@@ -261,7 +261,7 @@ const LoginPage: React.FC = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-purple-600/50 text-white hover:bg-purple-800/30 h-11 justify-start"
+              className="w-full bg-transparent border-purple-600/50 text-white hover:bg-purple-800/30 hover:text-indigo-400 h-11 justify-start"
               onClick={() => handleSocialLogin('github')}
               disabled={isLoading}
             >

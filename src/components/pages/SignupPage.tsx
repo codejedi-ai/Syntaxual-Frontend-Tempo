@@ -195,7 +195,7 @@ const SignupPage: React.FC = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-slate-600/50 text-white hover:bg-slate-800/50 hover:border-indigo-500/50 hover:text-white h-9 justify-start text-sm transition-all"
+              className="w-full bg-transparent border-slate-600/50 text-white hover:bg-slate-800/50 hover:border-indigo-500/50 hover:text-indigo-400 h-9 justify-start text-sm transition-all"
               onClick={() => handleSocialLogin('google')}
               disabled={isLoading}
             >
@@ -211,7 +211,7 @@ const SignupPage: React.FC = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-slate-600/50 text-white hover:bg-slate-800/50 hover:border-indigo-500/50 hover:text-white h-9 justify-start text-sm transition-all"
+              className="w-full bg-transparent border-slate-600/50 text-white hover:bg-slate-800/50 hover:border-indigo-500/50 hover:text-indigo-400 h-9 justify-start text-sm transition-all"
               onClick={() => handleSocialLogin('github')}
               disabled={isLoading}
             >
