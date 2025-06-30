@@ -86,7 +86,7 @@ const LoginPage: React.FC = () => {
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 z-10 p-6">
         <Link to="/" className="inline-block">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-200 via-violet-300 to-indigo-300 text-transparent bg-clip-text">
+          <h1 className="text-2xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text">
             Syntaxtual
           </h1>
         </Link>
