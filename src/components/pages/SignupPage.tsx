@@ -73,9 +73,7 @@ const SignupPage: React.FC = () => {
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 z-10 p-6">
         <Link to="/" className="inline-block">
-          <h1 className="text-2xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text">
-            Syntaxtual
-          </h1>
+          <span className="text-lg text-slate-400 hover:text-slate-300 transition-colors">← Back to home</span>
         </Link>
       </div>
 
