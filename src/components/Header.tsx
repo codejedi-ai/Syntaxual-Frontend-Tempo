@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { AuthModal } from "@/components/auth/AuthModal";
 import { UserProfile } from "@/components/auth/UserProfile";
 
 interface HeaderProps {
@@ -32,9 +31,11 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
     <header className={cn("fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10", className)}>
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text mr-8">
-            Syntaxtual
-          </h1>
+          <Link to="/">
+            <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text mr-8">
+              Syntaxtual
+            </h1>
+          </Link>
           <nav className="hidden md:flex space-x-6">
             {navItems.map((item) => (
               <a
@@ -55,16 +56,16 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
             <UserProfile />
           ) : (
             <>
-              <AuthModal>
+              <Link to="/login">
                 <Button variant="ghost" className="text-white/70 hover:text-white">
                   Login
                 </Button>
-              </AuthModal>
-              <AuthModal>
+              </Link>
+              <Link to="/signup">
                 <Button variant="gradient">
                   Sign Up
                 </Button>
-              </AuthModal>
+              </Link>
             </>
           )}
         </div>
