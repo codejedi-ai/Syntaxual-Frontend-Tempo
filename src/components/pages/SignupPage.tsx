@@ -163,16 +163,16 @@ const SignupPage: React.FC = () => {
 
             <div className="text-xs text-slate-400 text-center leading-tight">
               By creating an account, you agree to our{" "}
-              <Link to="#" className="text-indigo-300 hover:text-indigo-200 hover:underline">Terms</Link>
+              <Link to="#" className="text-indigo-300 hover:text-white hover:underline">Terms</Link>
               {" "}and{" "}
-              <Link to="#" className="text-indigo-300 hover:text-indigo-200 hover:underline">Privacy Policy</Link>
+              <Link to="#" className="text-indigo-300 hover:text-white hover:underline">Privacy Policy</Link>
             </div>
           </form>
 
           <div className="text-center">
             <p className="text-slate-400 text-sm">
               Already have an account?{" "}
-              <Link to="/login" className="text-indigo-300 hover:text-indigo-200 hover:underline">
+              <Link to="/login" className="text-indigo-300 hover:text-white hover:underline">
                 Sign in
               </Link>
             </p>
@@ -195,7 +195,7 @@ const SignupPage: React.FC = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-slate-600/50 text-white hover:bg-slate-800/50 hover:border-indigo-500/50 h-9 justify-start text-sm transition-all"
+              className="w-full bg-transparent border-slate-600/50 text-white hover:bg-slate-800/50 hover:border-indigo-500/50 hover:text-white h-9 justify-start text-sm transition-all"
               onClick={() => handleSocialLogin('google')}
               disabled={isLoading}
             >
@@ -211,7 +211,7 @@ const SignupPage: React.FC = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full bg-transparent border-slate-600/50 text-white hover:bg-slate-800/50 hover:border-indigo-500/50 h-9 justify-start text-sm transition-all"
+              className="w-full bg-transparent border-slate-600/50 text-white hover:bg-slate-800/50 hover:border-indigo-500/50 hover:text-white h-9 justify-start text-sm transition-all"
               onClick={() => handleSocialLogin('github')}
               disabled={isLoading}
             >
