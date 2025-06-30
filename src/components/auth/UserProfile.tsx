@@ -1,16 +1,6 @@
 import React from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LogOut, Settings, User } from "lucide-react";
 
 export const UserProfile: React.FC = () => {
   const { user, logout } = useAuth();
@@ -35,39 +25,34 @@ export const UserProfile: React.FC = () => {
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-          <Avatar className="h-8 w-8">
-            <AvatarImage src={user.photoURL || undefined} alt={user.displayName || "User"} />
-            <AvatarFallback>
-              {user.displayName ? getInitials(user.displayName) : <User className="h-4 w-4" />}
-            </AvatarFallback>
-          </Avatar>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56" align="end" forceMount>
-        <DropdownMenuLabel className="font-normal">
+    <div className="relative group">
+      <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+        <div className="h-8 w-8 rounded-full bg-purple-600 flex items-center justify-center text-white text-sm font-medium">
+          {user.displayName ? getInitials(user.displayName) : "U"}
+        </div>
+      </Button>
+      
+      {/* Simple dropdown menu */}
+      <div className="absolute right-0 top-full mt-2 w-56 bg-gray-900 border border-gray-700 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <div className="p-3 border-b border-gray-700">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">
+            <p className="text-sm font-medium text-white">
               {user.displayName || "User"}
             </p>
-            <p className="text-xs leading-none text-muted-foreground">
+            <p className="text-xs text-gray-400">
               {user.email}
             </p>
           </div>
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <Settings className="mr-2 h-4 w-4" />
-          <span>Settings</span>
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={handleLogout}>
-          <LogOut className="mr-2 h-4 w-4" />
-          <span>Log out</span>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+        </div>
+        <div className="p-1">
+          <button
+            onClick={handleLogout}
+            className="w-full text-left px-3 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white rounded-md transition-colors"
+          >
+            Log out
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
