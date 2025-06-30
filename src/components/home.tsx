@@ -19,7 +19,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero">
         <HeroSection 
-          title="Syntaxual AI Coding Buddy"
+          title="Syntaxtual AI Coding Buddy"
           subtitle="Your intelligent coding companion that helps you write better code faster. Powered by advanced AI to understand your coding style and needs."
           onGetStarted={() => handleNavItemClick("features")}
         />
@@ -30,7 +30,7 @@ export default function Home() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Smart Features for Modern Developers</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Syntaxual offers tools and features designed to streamline your development workflow and enhance productivity.
+            Syntaxtual offers tools and features designed to streamline your development workflow and enhance productivity.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function Home() {
       {/* Demo Section */}
       <section id="demo" className="container mx-auto py-12 px-4 h-screen flex flex-col">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience Syntaxual in Action</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience Syntaxtual in Action</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Try our intelligent code editor with real-time suggestions and analysis.
           </p>
@@ -183,7 +183,7 @@ let unusedVariable = 'test';`}
       {/* About Section */}
       <section id="about" className="container mx-auto py-24 px-4 min-h-screen flex flex-col justify-center">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Syntaxual</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Syntaxtual</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             We're a team of developers and AI experts passionate about creating better coding tools.
           </p>
@@ -233,7 +233,7 @@ let unusedVariable = 'test';`}
           <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-fuchsia-500/10 rounded-3xl opacity-30 blur-3xl"></div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Supercharge Your Coding?</h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
-            Join thousands of developers who are already using Syntaxual to write better code faster.
+            Join thousands of developers who are already using Syntaxtual to write better code faster.
           </p>
           <Button variant="gradient" size="lg">
             Get Started Now
@@ -243,4 +243,3 @@ let unusedVariable = 'test';`}
     </Layout>
   );
 }
-
