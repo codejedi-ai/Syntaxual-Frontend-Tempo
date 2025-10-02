@@ -6,6 +6,7 @@ import routes from "tempo-routes";
 const DashboardPage = lazy(() => import("./components/pages/DashboardPage"));
 const CreateAgentPage = lazy(() => import("./components/pages/CreateAgentPage"));
 const AgentDetailPage = lazy(() => import("./components/pages/AgentDetailPage"));
+const PricingPage = lazy(() => import("./components/pages/PricingPage"));
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/create-agent" element={<CreateAgentPage />} />
           <Route path="/agent/:id" element={<AgentDetailPage />} />

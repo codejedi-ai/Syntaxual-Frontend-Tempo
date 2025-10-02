@@ -22,15 +22,17 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
   const { user, loading } = useAuth();
   
   const navItems = [
-    { label: "Home", id: "hero" },
-    { label: "Features", id: "features" },
-    { label: "Pricing", id: "pricing" },
-    { label: "About", id: "about" },
+    { label: "Home", id: "hero", path: "/" },
+    { label: "Features", id: "features", path: "/" },
+    { label: "Pricing", id: "pricing", path: "/pricing" },
+    { label: "About", id: "about", path: "/" },
   ];
 
-  const handleClick = (id: string, e: React.MouseEvent) => {
+  const handleClick = (id: string, path: string, e: React.MouseEvent) => {
     e.preventDefault();
-    if (onNavItemClick) {
+    if (path === "/pricing") {
+      window.location.href = path;
+    } else if (onNavItemClick) {
       onNavItemClick(id);
     }
   };
@@ -49,8 +51,8 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
             {navItems.map((item) => (
               <a
                 key={item.id}
-                href={`#${item.id}`}
-                onClick={(e) => handleClick(item.id, e)}
+                href={item.path === "/pricing" ? item.path : `#${item.id}`}
+                onClick={(e) => handleClick(item.id, item.path, e)}
                 className="text-white/70 hover:text-white transition-colors"
               >
                 {item.label}
