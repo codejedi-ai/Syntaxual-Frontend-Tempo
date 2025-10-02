@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center gap-3">
-            <img src="/logo.jpg" alt="Syntaxtual Logo" className="h-10 w-10 rounded-lg object-cover" />
+            <img src="/vite.ico" alt="Syntaxtual Logo" className="h-10 w-10 object-contain" />
             <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-cyan-400 text-transparent bg-clip-text cursor-pointer">
               Syntaxtual
             </h1>
