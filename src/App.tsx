@@ -3,10 +3,10 @@ import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import routes from "tempo-routes";
 
-const DashboardPage = lazy(() => import("./components/pages/DashboardPage"));
-const CreateAgentPage = lazy(() => import("./components/pages/CreateAgentPage"));
-const AgentDetailPage = lazy(() => import("./components/pages/AgentDetailPage"));
-const PricingPage = lazy(() => import("./components/pages/PricingPage"));
+const DashboardPage = lazy(() => import("./pages/DashboardPage"));
+const CreateAgentPage = lazy(() => import("./pages/CreateAgentPage"));
+const AgentDetailPage = lazy(() => import("./pages/AgentDetailPage"));
+const PricingPage = lazy(() => import("./pages/PricingPage"));
 
 function App() {
   return (

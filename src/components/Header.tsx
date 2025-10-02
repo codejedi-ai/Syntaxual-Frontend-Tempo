@@ -39,10 +39,10 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
 
   return (
     <header className={cn("fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10", className)}>
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center gap-3">
-            <img src="/vite.ico" alt="Syntaxtual Logo" className="h-10 w-10 object-contain" />
+            <img src="/vite.ico" alt="Syntaxtual Logo" className="h-12 w-12 object-contain" />
             <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-cyan-400 text-transparent bg-clip-text cursor-pointer">
               Syntaxtual
             </h1>
