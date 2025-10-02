@@ -11,12 +11,26 @@ export type Agent = {
   name: string
   description: string
   code: string
+  yaml_config: string | null
+  config_version: string
+  agent_type: string
   model_provider: string
   model_name: string
   status: 'draft' | 'active' | 'deployed' | 'failed'
   deployment_url: string | null
   created_at: string
   updated_at: string
+}
+
+export type AgentTemplate = {
+  id: string
+  name: string
+  description: string
+  agent_type: string
+  yaml_template: string
+  is_public: boolean
+  created_by: string | null
+  created_at: string
 }
 
 export type ApiToken = {

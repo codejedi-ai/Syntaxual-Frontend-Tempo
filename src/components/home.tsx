@@ -19,8 +19,8 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero">
         <HeroSection
-          title="AI Agent Factory"
-          subtitle="Build, deploy, and manage intelligent AI agents as code. Create autonomous agents powered by the latest AI models and deploy them instantly."
+          title="Agent-as-Code Platform"
+          subtitle="Syntaxtual: Define AI agents with YAML. Deploy autonomous systems instantly. Infrastructure-as-Code for AI agents - AAC (Agentic Software Service)."
           onGetStarted={() => handleNavItemClick("features")}
         />
       </section>
@@ -28,9 +28,9 @@ export default function Home() {
       {/* Features Section */}
       <section id="features" className="container mx-auto py-24 px-4 min-h-screen flex flex-col justify-center">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Build AI Agents, Effortlessly</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">YAML-Powered Agent Assembly</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            A complete platform to create, configure, and deploy AI agents with code. Multi-agent systems made simple.
+            Define agents declaratively with YAML. Our assembler generates production-ready code automatically. Agent-as-Code made simple.
           </p>
         </div>
 
@@ -38,18 +38,18 @@ export default function Home() {
           features={[
             {
               icon: "ai",
-              title: "Agents as Code",
-              description: "Define your AI agents with code. Full control over agent behavior and logic."
+              title: "YAML Configuration",
+              description: "Declarative agent definitions. Write YAML, deploy agents. Infrastructure-as-Code for AI."
             },
             {
               icon: "code",
-              title: "Multi-Model Support",
-              description: "Use OpenAI, Anthropic, Google AI, and more. Switch models with ease."
+              title: "Automatic Assembly",
+              description: "YAML to production code instantly. Our assembler handles the complexity."
             },
             {
               icon: "git",
-              title: "Instant Deployment",
-              description: "Deploy your agents to production with one click. Automatic scaling included."
+              title: "Multi-Agent Systems",
+              description: "Build complex agent workflows. Chatbots, APIs, workflows, and more."
             },
             {
               icon: "ai",
@@ -74,28 +74,39 @@ export default function Home() {
       {/* Demo Section */}
       <section id="demo" className="container mx-auto py-12 px-4 h-screen flex flex-col">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Code Your AI Agent</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Write YAML, Deploy Agents</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Write custom logic for your AI agents using our powerful code editor.
+            Simple YAML configurations become production-ready AI agents in seconds.
           </p>
         </div>
         
         <div className="flex-1 w-full">
           <CodeEditor 
-            initialCode={`// Define your AI agent behavior
-async function processRequest(input) {
-  // Access AI model configuration
-  const { provider, model } = agentConfig;
+            initialCode={`name: customer-support-bot
+description: AI customer support agent
+version: v1
 
-  // Your custom agent logic here
-  const response = {
-    agent: "MyAgent",
-    processed: input,
-    timestamp: new Date().toISOString()
-  };
+agent:
+  type: chatbot
+  model:
+    provider: openai
+    name: gpt-4
 
-  return response;
-}`}
+  personality:
+    tone: friendly
+    style: helpful
+
+  system_prompt: |
+    You are a helpful customer support agent.
+    Assist users with their inquiries.
+
+  capabilities:
+    - conversation
+    - question_answering
+
+  memory:
+    enabled: true
+    max_history: 10`}
             className="w-full h-full"
           />
         </div>
@@ -129,7 +140,7 @@ async function processRequest(input) {
                 Community support
               </li>
             </ul>
-            <Button variant="subtle" className="w-full">Get Started</Button>
+            <Button variant="outline" className="w-full">Get Started</Button>
           </div>
 
           {/* Pro Plan */}
@@ -155,7 +166,7 @@ async function processRequest(input) {
                 Advanced monitoring
               </li>
             </ul>
-            <Button variant="gradient" className="w-full">Subscribe Now</Button>
+            <Button variant="default" className="w-full bg-gradient-to-r from-blue-600 to-cyan-600">Subscribe Now</Button>
           </div>
 
           {/* Enterprise Plan */}
@@ -180,7 +191,7 @@ async function processRequest(input) {
                 Dedicated support
               </li>
             </ul>
-            <Button variant="subtle" className="w-full">Contact Sales</Button>
+            <Button variant="outline" className="w-full">Contact Sales</Button>
           </div>
         </div>
       </section>
@@ -188,9 +199,9 @@ async function processRequest(input) {
       {/* About Section */}
       <section id="about" className="container mx-auto py-24 px-4 min-h-screen flex flex-col justify-center">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About AI Agent Factory</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Syntaxtual</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Empowering developers to build and deploy autonomous AI agents with enterprise-grade infrastructure.
+            Agent-as-Code platform. Define AI agents declaratively, deploy instantly. AAC - Agentic Software Service.
           </p>
         </div>
         
@@ -202,30 +213,30 @@ async function processRequest(input) {
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
               <p className="text-white/70">
-                To democratize AI agent development and make it accessible to every developer, regardless of their AI expertise.
+                Make AI agent development as simple as writing YAML. No AI expertise required. Agent-as-Code for everyone.
               </p>
             </div>
           </div>
           
           <div className="space-y-8">
             <div className="bg-gradient-to-r from-purple-900/20 to-transparent rounded-xl p-6 border-l-4 border-purple-500">
-              <h4 className="text-xl font-semibold mb-2">Code-First Approach</h4>
+              <h4 className="text-xl font-semibold mb-2">Declarative Configuration</h4>
               <p className="text-white/70">
-                Define agent behavior with code you control. No black boxes, no vendor lock-in.
+                YAML-based agent definitions. Version control friendly. Infrastructure-as-Code principles for AI.
               </p>
             </div>
             
             <div className="bg-gradient-to-r from-purple-900/20 to-transparent rounded-xl p-6 border-l-4 border-fuchsia-500">
-              <h4 className="text-xl font-semibold mb-2">Multi-Model Freedom</h4>
+              <h4 className="text-xl font-semibold mb-2">Automatic Code Generation</h4>
               <p className="text-white/70">
-                Switch between OpenAI, Anthropic, Google, and more. Choose the best model for each task.
+                Our assembler converts YAML to production-ready code. Deploy chatbots, APIs, and workflows instantly.
               </p>
             </div>
             
             <div className="bg-gradient-to-r from-purple-900/20 to-transparent rounded-xl p-6 border-l-4 border-purple-500">
-              <h4 className="text-xl font-semibold mb-2">Production Ready</h4>
+              <h4 className="text-xl font-semibold mb-2">Template Library</h4>
               <p className="text-white/70">
-                Deploy to production in seconds. Automatic scaling, monitoring, and version control included.
+                Start from pre-built templates. Chatbots, API agents, workflows. Customize and deploy in minutes.
               </p>
             </div>
           </div>
@@ -240,7 +251,7 @@ async function processRequest(input) {
           <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
             Join developers building the next generation of autonomous AI systems.
           </p>
-          <Button variant="gradient" size="lg" onClick={() => window.location.href = '/signup'}>
+          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700" onClick={() => window.location.href = '/dashboard'}>
             Start Building Free
           </Button>
         </div>

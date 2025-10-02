@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
         <div className="flex items-center">
           <Link to="/">
             <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-cyan-400 text-transparent bg-clip-text mr-8 cursor-pointer">
-              AI Agent Factory
+              Syntaxtual
             </h1>
           </Link>
           <nav className="hidden md:flex space-x-6">
@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
                 align="end"
               >
                 <div className="px-3 py-2 text-sm text-white/70">
-                  <p className="font-medium">Welcome to AI Agent Factory</p>
+                  <p className="font-medium">Welcome to Syntaxtual</p>
                   <p className="text-xs">Sign in or create an account</p>
                 </div>
                 <DropdownMenuSeparator className="bg-white/10" />

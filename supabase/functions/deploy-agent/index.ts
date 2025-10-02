@@ -42,7 +42,7 @@ Deno.serve(async (req: Request) => {
     const agent = deployment.agents;
     const functionName = `agent-${agent.id.slice(0, 8)}`;
 
-    const agentCode = `
+    const agentCode = agent.code || `
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 const corsHeaders = {
@@ -51,11 +51,16 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
 };
 
-const agentConfig = {
-  provider: "${agent.model_provider}",
-  model: "${agent.model_name}",
-  agentId: "${agent.id}"
-};
+async function processRequest(input: any, agentConfig: any) {
+  return {
+    agent: "${agent.name}",
+    type: "${agent.agent_type}",
+    yamlConfig: ${JSON.stringify(agent.yaml_config)},
+    message: "Agent deployed from YAML configuration",
+    input: input,
+    timestamp: new Date().toISOString()
+  };
+}
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
@@ -66,9 +71,12 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    ${agent.code}
-
     const input = await req.json();
+    const agentConfig = {
+      provider: "${agent.model_provider}",
+      model: "${agent.model_name}",
+      agentId: "${agent.id}"
+    };
     const result = await processRequest(input, agentConfig);
 
     return new Response(JSON.stringify(result), {

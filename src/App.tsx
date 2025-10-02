@@ -1,12 +1,11 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
-import LoginPage from "./components/pages/LoginPage";
-import SignupPage from "./components/pages/SignupPage";
-import DashboardPage from "./components/pages/DashboardPage";
-import CreateAgentPage from "./components/pages/CreateAgentPage";
-import AgentDetailPage from "./components/pages/AgentDetailPage";
 import routes from "tempo-routes";
+
+const DashboardPage = lazy(() => import("./components/pages/DashboardPage"));
+const CreateAgentPage = lazy(() => import("./components/pages/CreateAgentPage"));
+const AgentDetailPage = lazy(() => import("./components/pages/AgentDetailPage"));
 
 function App() {
   return (
@@ -14,8 +13,6 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/create-agent" element={<CreateAgentPage />} />
           <Route path="/agent/:id" element={<AgentDetailPage />} />
