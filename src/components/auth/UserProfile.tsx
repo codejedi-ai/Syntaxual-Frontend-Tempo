@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LogOut, Settings, User } from "lucide-react";
+import { LogOut, Settings, User, LayoutDashboard } from "lucide-react";
 
 export const UserProfile: React.FC = () => {
   const { user, logout } = useAuth();
@@ -58,6 +58,10 @@ export const UserProfile: React.FC = () => {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
+        <DropdownMenuItem onClick={() => window.location.href = '/dashboard'}>
+          <LayoutDashboard className="mr-2 h-4 w-4" />
+          <span>Dashboard</span>
+        </DropdownMenuItem>
         <DropdownMenuItem>
           <Settings className="mr-2 h-4 w-4" />
           <span>Settings</span>

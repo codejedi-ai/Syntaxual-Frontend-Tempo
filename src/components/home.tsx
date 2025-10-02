@@ -18,9 +18,9 @@ export default function Home() {
     <Layout onNavItemClick={handleNavItemClick}>
       {/* Hero Section */}
       <section id="hero">
-        <HeroSection 
-          title="Syntaxtual AI Coding Buddy"
-          subtitle="Your intelligent coding companion that helps you write better code faster. Powered by advanced AI to understand your coding style and needs."
+        <HeroSection
+          title="AI Agent Factory"
+          subtitle="Build, deploy, and manage intelligent AI agents as code. Create autonomous agents powered by the latest AI models and deploy them instantly."
           onGetStarted={() => handleNavItemClick("features")}
         />
       </section>
@@ -28,43 +28,43 @@ export default function Home() {
       {/* Features Section */}
       <section id="features" className="container mx-auto py-24 px-4 min-h-screen flex flex-col justify-center">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Smart Features for Modern Developers</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Build AI Agents, Effortlessly</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Syntaxtual offers tools and features designed to streamline your development workflow and enhance productivity.
+            A complete platform to create, configure, and deploy AI agents with code. Multi-agent systems made simple.
           </p>
         </div>
 
-        <FeatureGrid 
+        <FeatureGrid
           features={[
             {
               icon: "ai",
-              title: "Intelligent Code Completion",
-              description: "Get smart code suggestions based on context and your coding patterns."
+              title: "Agents as Code",
+              description: "Define your AI agents with code. Full control over agent behavior and logic."
             },
             {
               icon: "code",
-              title: "Code Refactoring",
-              description: "Automatically identify and fix code smells and improve your code quality."
+              title: "Multi-Model Support",
+              description: "Use OpenAI, Anthropic, Google AI, and more. Switch models with ease."
             },
             {
               icon: "git",
-              title: "Multi-language Support",
-              description: "Works with JavaScript, TypeScript, Python, Java, and many more languages."
+              title: "Instant Deployment",
+              description: "Deploy your agents to production with one click. Automatic scaling included."
             },
             {
               icon: "ai",
-              title: "Security Analysis",
-              description: "Detect potential security vulnerabilities in your code as you type."
+              title: "Secure API Tokens",
+              description: "Encrypted storage for your API keys. Your credentials stay safe."
             },
             {
               icon: "code",
-              title: "AI-Powered Documentation",
-              description: "Generate comprehensive documentation for your code with a single click."
+              title: "Execution Monitoring",
+              description: "Track agent performance, inputs, outputs, and errors in real-time."
             },
             {
               icon: "git",
-              title: "Integration Ecosystem",
-              description: "Seamlessly integrates with your favorite IDEs and development tools."
+              title: "Version Control",
+              description: "Full deployment history. Roll back to any version instantly."
             }
           ]}
           className="bg-transparent"
@@ -74,23 +74,28 @@ export default function Home() {
       {/* Demo Section */}
       <section id="demo" className="container mx-auto py-12 px-4 h-screen flex flex-col">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience Syntaxtual in Action</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Code Your AI Agent</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Try our intelligent code editor with real-time suggestions and analysis.
+            Write custom logic for your AI agents using our powerful code editor.
           </p>
         </div>
         
         <div className="flex-1 w-full">
           <CodeEditor 
-            initialCode={`function calculateTotal(items) {
-  let total = 0;
-  items.forEach(item => {
-    total += item.price
-  })
-  return total
-}
+            initialCode={`// Define your AI agent behavior
+async function processRequest(input) {
+  // Access AI model configuration
+  const { provider, model } = agentConfig;
 
-let unusedVariable = 'test';`}
+  // Your custom agent logic here
+  const response = {
+    agent: "MyAgent",
+    processed: input,
+    timestamp: new Date().toISOString()
+  };
+
+  return response;
+}`}
             className="w-full h-full"
           />
         </div>
@@ -113,11 +118,11 @@ let unusedVariable = 'test';`}
             <ul className="space-y-3 mb-8">
               <li className="flex items-center text-white/80">
                 <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
-                Basic code suggestions
+                3 AI agents
               </li>
               <li className="flex items-center text-white/80">
                 <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
-                5 projects
+                1,000 executions/month
               </li>
               <li className="flex items-center text-white/80">
                 <div className="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center mr-2">✓</div>
@@ -135,11 +140,11 @@ let unusedVariable = 'test';`}
             <ul className="space-y-3 mb-8">
               <li className="flex items-center text-white/80">
                 <div className="w-5 h-5 rounded-full bg-fuchsia-500/20 flex items-center justify-center mr-2">✓</div>
-                Advanced code suggestions
+                Unlimited agents
               </li>
               <li className="flex items-center text-white/80">
                 <div className="w-5 h-5 rounded-full bg-fuchsia-500/20 flex items-center justify-center mr-2">✓</div>
-                Unlimited projects
+                50,000 executions/month
               </li>
               <li className="flex items-center text-white/80">
                 <div className="w-5 h-5 rounded-full bg-fuchsia-500/20 flex items-center justify-center mr-2">✓</div>
@@ -147,7 +152,7 @@ let unusedVariable = 'test';`}
               </li>
               <li className="flex items-center text-white/80">
                 <div className="w-5 h-5 rounded-full bg-fuchsia-500/20 flex items-center justify-center mr-2">✓</div>
-                Code quality metrics
+                Advanced monitoring
               </li>
             </ul>
             <Button variant="gradient" className="w-full">Subscribe Now</Button>
@@ -183,9 +188,9 @@ let unusedVariable = 'test';`}
       {/* About Section */}
       <section id="about" className="container mx-auto py-24 px-4 min-h-screen flex flex-col justify-center">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Syntaxtual</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">About AI Agent Factory</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            We're a team of developers and AI experts passionate about creating better coding tools.
+            Empowering developers to build and deploy autonomous AI agents with enterprise-grade infrastructure.
           </p>
         </div>
         
@@ -197,30 +202,30 @@ let unusedVariable = 'test';`}
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
               <p className="text-white/70">
-                To transform the way developers write code by providing intelligent tools that understand code context and developer intent.
+                To democratize AI agent development and make it accessible to every developer, regardless of their AI expertise.
               </p>
             </div>
           </div>
           
           <div className="space-y-8">
             <div className="bg-gradient-to-r from-purple-900/20 to-transparent rounded-xl p-6 border-l-4 border-purple-500">
-              <h4 className="text-xl font-semibold mb-2">Founded by Developers</h4>
+              <h4 className="text-xl font-semibold mb-2">Code-First Approach</h4>
               <p className="text-white/70">
-                Created by a team who understands the challenges of modern software development firsthand.
+                Define agent behavior with code you control. No black boxes, no vendor lock-in.
               </p>
             </div>
             
             <div className="bg-gradient-to-r from-purple-900/20 to-transparent rounded-xl p-6 border-l-4 border-fuchsia-500">
-              <h4 className="text-xl font-semibold mb-2">Cutting-Edge AI</h4>
+              <h4 className="text-xl font-semibold mb-2">Multi-Model Freedom</h4>
               <p className="text-white/70">
-                We leverage the latest in machine learning to build AI that truly understands code patterns and best practices.
+                Switch between OpenAI, Anthropic, Google, and more. Choose the best model for each task.
               </p>
             </div>
             
             <div className="bg-gradient-to-r from-purple-900/20 to-transparent rounded-xl p-6 border-l-4 border-purple-500">
-              <h4 className="text-xl font-semibold mb-2">Developer-First Philosophy</h4>
+              <h4 className="text-xl font-semibold mb-2">Production Ready</h4>
               <p className="text-white/70">
-                Every feature we build is designed to fit seamlessly into your workflow and make you more productive.
+                Deploy to production in seconds. Automatic scaling, monitoring, and version control included.
               </p>
             </div>
           </div>
@@ -231,12 +236,12 @@ let unusedVariable = 'test';`}
       <section id="cta" className="container mx-auto py-24 px-4">
         <div className="bg-gradient-to-r from-purple-900/40 to-fuchsia-900/40 rounded-3xl p-12 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-fuchsia-500/10 rounded-3xl opacity-30 blur-3xl"></div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Supercharge Your Coding?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Build Your AI Agent?</h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
-            Join thousands of developers who are already using Syntaxtual to write better code faster.
+            Join developers building the next generation of autonomous AI systems.
           </p>
-          <Button variant="gradient" size="lg">
-            Get Started Now
+          <Button variant="gradient" size="lg" onClick={() => window.location.href = '/signup'}>
+            Start Building Free
           </Button>
         </div>
       </section>

@@ -40,8 +40,8 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/">
-            <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-fuchsia-500 text-transparent bg-clip-text mr-8 cursor-pointer">
-              Syntaxtual
+            <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-cyan-400 text-transparent bg-clip-text mr-8 cursor-pointer">
+              AI Agent Factory
             </h1>
           </Link>
           <nav className="hidden md:flex space-x-6">
@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
                 align="end"
               >
                 <div className="px-3 py-2 text-sm text-white/70">
-                  <p className="font-medium">Welcome to Syntaxtual</p>
+                  <p className="font-medium">Welcome to AI Agent Factory</p>
                   <p className="text-xs">Sign in or create an account</p>
                 </div>
                 <DropdownMenuSeparator className="bg-white/10" />
@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
                 </DropdownMenuItem>
                 <DropdownMenuSeparator className="bg-white/10" />
                 <div className="px-3 py-2 text-xs text-white/50">
-                  <p>Join thousands of developers using AI-powered code analysis</p>
+                  <p>Build and deploy autonomous AI agents</p>
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>

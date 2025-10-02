@@ -1,18 +1,19 @@
 import React from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { AuthModal } from "./AuthModal";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
   fallback?: React.ReactNode;
 }
 
-export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ 
-  children, 
-  fallback 
+export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
+  children,
+  fallback
 }) => {
   const { user, loading } = useAuth();
+  const navigate = useNavigate();
 
   if (loading) {
     return (
@@ -28,9 +29,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
         <div className="text-center space-y-4">
           <h2 className="text-2xl font-bold">Access Restricted</h2>
           <p className="text-muted-foreground">Please sign in to access this content.</p>
-          <AuthModal>
-            <Button>Sign In</Button>
-          </AuthModal>
+          <Button onClick={() => navigate('/login')}>Sign In</Button>
         </div>
       </div>
     );
