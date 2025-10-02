@@ -20,7 +20,7 @@ export default function Home() {
       <section id="hero">
         <HeroSection
           title="Agent-as-Code Platform"
-          subtitle="Syntaxtual: Define AI agents with YAML. Deploy autonomous systems instantly. Infrastructure-as-Code for AI agents - AAC (Agentic Software Service)."
+          subtitle="SyntaxTual: Define AI agents with YAML. Deploy autonomous systems instantly. Infrastructure-as-Code for AI agents - AAC (Agentic Software Service)."
           onGetStarted={() => handleNavItemClick("features")}
         />
       </section>
@@ -115,7 +115,7 @@ agent:
       {/* About Section */}
       <section id="about" className="container mx-auto py-24 px-4 min-h-screen flex flex-col justify-center">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Syntaxtual</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">About SyntaxTual</h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Agent-as-Code platform. Define AI agents declaratively, deploy instantly. AAC - Agentic Software Service.
           </p>

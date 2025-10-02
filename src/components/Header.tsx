@@ -42,9 +42,9 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center gap-3">
-            <img src="/vite.ico" alt="Syntaxtual Logo" className="h-12 w-12 object-contain" />
+            <img src="/vite.ico" alt="SyntaxTual Logo" className="h-12 w-12 object-contain" />
             <h1 className="text-xl font-bold bg-gradient-to-tr from-white to-cyan-400 text-transparent bg-clip-text cursor-pointer">
-              Syntaxtual
+              SyntaxTual
             </h1>
           </Link>
           <nav className="hidden md:flex space-x-6 ml-8">
@@ -81,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
                 align="end"
               >
                 <div className="px-3 py-2 text-sm text-white/70">
-                  <p className="font-medium">Welcome to Syntaxtual</p>
+                  <p className="font-medium">Welcome to SyntaxTual</p>
                   <p className="text-xs">Sign in or create an account</p>
                 </div>
                 <DropdownMenuSeparator className="bg-white/10" />
