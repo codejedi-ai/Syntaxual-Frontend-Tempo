@@ -12,7 +12,7 @@ import { Badge } from '@/components/ui/badge'
 import CodeMirror from '@uiw/react-codemirror'
 import { javascript } from '@codemirror/lang-javascript'
 import { vscodeDark } from '@uiw/codemirror-theme-vscode'
-import Layout from '@/components/Layout'
+import DashboardLayout from '@/components/DashboardLayout'
 import { ArrowLeft, Save, FileCode, Sparkles } from 'lucide-react'
 
 const DEFAULT_YAML = `name: my-agent
@@ -143,7 +143,7 @@ export default function CreateAgentPage() {
   }
 
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container mx-auto py-12 px-4 max-w-7xl">
         <Button
           variant="ghost"
@@ -284,6 +284,6 @@ export default function CreateAgentPage() {
           </div>
         </form>
       </div>
-    </Layout>
+    </DashboardLayout>
   )
 }

@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge'
 import CodeMirror from '@uiw/react-codemirror'
 import { javascript } from '@codemirror/lang-javascript'
 import { vscodeDark } from '@uiw/codemirror-theme-vscode'
-import Layout from '@/components/Layout'
+import DashboardLayout from '@/components/DashboardLayout'
 import { ArrowLeft, Save, Rocket, History, FileCode, Sparkles } from 'lucide-react'
 
 export default function AgentDetailPage() {
@@ -167,16 +167,16 @@ export default function AgentDetailPage() {
 
   if (loading) {
     return (
-      <Layout>
+      <DashboardLayout>
         <div className="container mx-auto py-12 px-4">
           <div className="text-center">Loading...</div>
         </div>
-      </Layout>
+      </DashboardLayout>
     )
   }
 
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container mx-auto py-12 px-4 max-w-7xl">
         <Button
           variant="ghost"
@@ -355,6 +355,6 @@ export default function AgentDetailPage() {
           </TabsContent>
         </Tabs>
       </div>
-    </Layout>
+    </DashboardLayout>
   )
 }
