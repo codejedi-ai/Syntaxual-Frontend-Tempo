@@ -15,7 +15,6 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
   const { user, loading } = useAuth();
 
   const navItems = [
-    { label: "Home", path: "/" },
     { label: "News", path: "/news" },
     { label: "Pricing", path: "/pricing" },
   ];
