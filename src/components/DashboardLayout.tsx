@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 
 interface DashboardLayoutProps {
@@ -8,14 +7,11 @@ interface DashboardLayoutProps {
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
-      <Header />
-      <div className="flex">
-        <Sidebar />
-        <main className="ml-64 flex-1 pt-20">
-          {children}
-        </main>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white flex">
+      <Sidebar />
+      <main className="ml-64 flex-1 p-8">
+        {children}
+      </main>
     </div>
   );
 };
