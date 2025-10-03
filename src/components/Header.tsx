@@ -9,23 +9,16 @@ import { User } from "lucide-react";
 interface HeaderProps {
   className?: string;
   onNavItemClick?: (sectionId: string) => void;
-  showDashboard?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ className, onNavItemClick, showDashboard = true }) => {
+const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
   const { user, loading } = useAuth();
 
-  const allNavItems = [
+  const navItems = [
     { label: "Home", path: "/" },
     { label: "News", path: "/news" },
     { label: "Pricing", path: "/pricing" },
-    { label: "Dashboard", path: "/dashboard", protected: true },
   ];
-
-  const navItems = allNavItems.filter(item => {
-    if (item.protected && !showDashboard) return false;
-    return true;
-  });
 
   return (
     <header className={cn("fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10", className)}>

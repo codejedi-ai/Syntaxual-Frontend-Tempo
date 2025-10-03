@@ -9,7 +9,7 @@ interface DashboardLayoutProps {
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
-      <Header showDashboard={true} />
+      <Header />
       <div className="flex">
         <Sidebar />
         <main className="ml-64 flex-1 pt-20">

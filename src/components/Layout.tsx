@@ -5,13 +5,12 @@ import Footer from "@/components/Footer";
 interface LayoutProps {
   children: React.ReactNode;
   onNavItemClick?: (sectionId: string) => void;
-  showDashboard?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, onNavItemClick, showDashboard = true }) => {
+const Layout: React.FC<LayoutProps> = ({ children, onNavItemClick }) => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/30 to-black text-white">
-      <Header onNavItemClick={onNavItemClick} showDashboard={showDashboard} />
+      <Header onNavItemClick={onNavItemClick} />
       <main>
         {children}
       </main>

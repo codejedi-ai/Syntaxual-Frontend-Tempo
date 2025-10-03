@@ -15,7 +15,7 @@ export default function Home() {
   };
 
   return (
-    <Layout onNavItemClick={handleNavItemClick} showDashboard={false}>
+    <Layout onNavItemClick={handleNavItemClick}>
       {/* Hero Section */}
       <section id="hero">
         <HeroSection
