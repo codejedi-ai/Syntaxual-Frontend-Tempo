@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Plus, Settings, Trash2, ExternalLink } from 'lucide-react'
-import Layout from '@/components/Layout'
+import DashboardLayout from '@/components/DashboardLayout'
 
 export default function DashboardPage() {
   const [agents, setAgents] = useState<Agent[]>([])
@@ -71,16 +71,16 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <Layout>
+      <DashboardLayout>
         <div className="container mx-auto py-12 px-4">
           <div className="text-center">Loading...</div>
         </div>
-      </Layout>
+      </DashboardLayout>
     )
   }
 
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container mx-auto py-12 px-4">
         <div className="flex justify-between items-center mb-8">
           <div>
@@ -190,6 +190,6 @@ export default function DashboardPage() {
           </div>
         )}
       </div>
-    </Layout>
+    </DashboardLayout>
   )
 }
