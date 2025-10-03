@@ -16,7 +16,7 @@ const Sidebar: React.FC = () => {
   ];
 
   const handleProfileClick = () => {
-    navigate('/');
+    navigate('/profile');
   };
 
   const getUserInitials = () => {
