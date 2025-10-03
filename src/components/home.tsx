@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import FeatureCard from "@/components/landing/FeatureCard"
 import { Code, Zap, Globe, Shield, Sparkle, Layers } from "lucide-react"
@@ -8,8 +8,19 @@ import { useRef } from "react"
 import HeroSection from "@/components/landing/HeroSection"
 import FeatureGrid from "@/components/landing/FeatureGrid"
 import Layout from "@/components/Layout"
+import { useAuth } from "@/hooks/useAuth"
 
 export default function Home() {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return null;
+  }
+
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" replace />;
+  }
+
   const handleNavItemClick = (sectionId: string) => {
     scrollToSection(sectionId);
   };

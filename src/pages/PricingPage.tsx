@@ -1,7 +1,18 @@
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import { Navigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function PricingPage() {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return null;
+  }
+
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" replace />;
+  }
   return (
     <Layout>
       <section className="container mx-auto py-24 px-4 min-h-screen flex flex-col justify-center">

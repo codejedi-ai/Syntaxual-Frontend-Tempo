@@ -3,8 +3,19 @@ import { Badge } from '../components/ui/badge'
 import { Button } from '../components/ui/button'
 import { Calendar, ExternalLink } from 'lucide-react'
 import Layout from '../components/Layout'
+import { Navigate } from 'react-router-dom'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function NewsPage() {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return null;
+  }
+
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" replace />;
+  }
   const news = [
     {
       id: 1,
