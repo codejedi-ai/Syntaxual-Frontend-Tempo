@@ -7,6 +7,7 @@ const DashboardPage = lazy(() => import("./pages/DashboardPage"));
 const CreateAgentPage = lazy(() => import("./pages/CreateAgentPage"));
 const AgentDetailPage = lazy(() => import("./pages/AgentDetailPage"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
+const SyntaxTual = lazy(() => import("./pages/SyntaxTual"));
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/auth" element={<SyntaxTual />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/create-agent" element={<CreateAgentPage />} />
