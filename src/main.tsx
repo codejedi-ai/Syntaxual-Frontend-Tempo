@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { AuthProvider } from "./contexts/AuthContext";
 
 import { TempoDevtools } from "tempo-devtools";
 TempoDevtools.init();
@@ -23,9 +24,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         redirect_uri: redirectUri
       }}
     >
-      <BrowserRouter basename={basename}>
-        <App />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter basename={basename}>
+          <App />
+        </BrowserRouter>
+      </AuthProvider>
     </Auth0Provider>
   </React.StrictMode>,
 );
