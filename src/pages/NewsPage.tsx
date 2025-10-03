@@ -8,8 +8,8 @@ export default function NewsPage() {
   const news = [
     {
       id: 1,
-      title: 'Team Clinches Top Position at FAST-NUCES National Hackathon',
-      description: 'Our team achieved first place at the prestigious FAST-NUCES National Hackathon, showcasing innovative solutions in AI and software development.',
+      title: 'Team Aether Wins Cohere x OpenSesame Builder Day',
+      description: 'Our team won the Cohere x OpenSesame Builder Day, where we built and demoed Syntaxtual, an AI coding buddy integrated into VS Code, in under 8 hours. The tool provides repository-level code analysis, conversational code reviews, and custom configuration options for smarter, faster code reviews with minimal manual intervention.',
       date: 'December 2024',
       category: 'Achievement',
       link: 'https://www.linkedin.com/posts/bilal-khan1548_thrilled-to-share-that-my-team-clinched-the-activity-7275562148670418944-nmTe/',
