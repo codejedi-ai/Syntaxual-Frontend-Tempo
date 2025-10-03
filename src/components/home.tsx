@@ -29,11 +29,7 @@ export default function Home() {
     <Layout onNavItemClick={handleNavItemClick}>
       {/* Hero Section */}
       <section id="hero">
-        <HeroSection
-          title="Code as DNA for AI Agents"
-          subtitle="From coding buddy to Agent-as-Code. AI agents that use MCP servers to generate more agents. A self-evolving ecosystem where code becomes living DNA."
-          onGetStarted={() => handleNavItemClick("features")}
-        />
+        <HeroSection onGetStarted={() => handleNavItemClick("features")} />
       </section>
 
       {/* Features Section */}
