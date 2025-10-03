@@ -4,14 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { UserProfile } from "@/components/auth/UserProfile";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { User, LogIn, UserPlus } from "lucide-react";
+import { User } from "lucide-react";
 
 interface HeaderProps {
   className?: string;
@@ -67,43 +60,15 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
           ) : user ? (
             <UserProfile />
           ) : (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  className="bg-gradient-to-r from-fuchsia-600/20 to-pink-600/20 border-fuchsia-500/30 text-white hover:bg-gradient-to-r hover:from-fuchsia-600/40 hover:to-pink-600/40 hover:border-fuchsia-400/50 backdrop-blur-sm transition-all duration-200"
-                >
-                  <User className="w-4 h-4 mr-2" />
-                  Account
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                className="w-56 bg-black/90 backdrop-blur-md border-white/10 text-white" 
-                align="end"
+            <Link to="/auth">
+              <Button
+                variant="outline"
+                className="bg-gradient-to-r from-fuchsia-600/20 to-pink-600/20 border-fuchsia-500/30 text-white hover:bg-gradient-to-r hover:from-fuchsia-600/40 hover:to-pink-600/40 hover:border-fuchsia-400/50 backdrop-blur-sm transition-all duration-200"
               >
-                <div className="px-3 py-2 text-sm text-white/70">
-                  <p className="font-medium">Welcome to SyntaxTual</p>
-                  <p className="text-xs">Sign in or create an account</p>
-                </div>
-                <DropdownMenuSeparator className="bg-white/10" />
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white">
-                  <Link to="/auth" className="flex items-center w-full">
-                    <LogIn className="w-4 h-4 mr-2" />
-                    Sign In
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white">
-                  <Link to="/auth" className="flex items-center w-full">
-                    <UserPlus className="w-4 h-4 mr-2" />
-                    Create Account
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator className="bg-white/10" />
-                <div className="px-3 py-2 text-xs text-white/50">
-                  <p>Build and deploy autonomous AI agents</p>
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                <User className="w-4 h-4 mr-2" />
+                Account
+              </Button>
+            </Link>
           )}
         </div>
       </div>
