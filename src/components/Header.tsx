@@ -24,13 +24,14 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
   const navItems = [
     { label: "Home", id: "hero", path: "/" },
     { label: "Features", id: "features", path: "/" },
+    { label: "News", id: "news", path: "/news" },
     { label: "Pricing", id: "pricing", path: "/pricing" },
     { label: "About", id: "about", path: "/" },
   ];
 
   const handleClick = (id: string, path: string, e: React.MouseEvent) => {
     e.preventDefault();
-    if (path === "/pricing") {
+    if (path === "/pricing" || path === "/news") {
       window.location.href = path;
     } else if (onNavItemClick) {
       onNavItemClick(id);
@@ -51,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
             {navItems.map((item) => (
               <a
                 key={item.id}
-                href={item.path === "/pricing" ? item.path : `#${item.id}`}
+                href={item.path === "/pricing" || item.path === "/news" ? item.path : `#${item.id}`}
                 onClick={(e) => handleClick(item.id, item.path, e)}
                 className="text-white/70 hover:text-white transition-colors"
               >
@@ -86,13 +87,13 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
                 </div>
                 <DropdownMenuSeparator className="bg-white/10" />
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white">
-                  <Link to="/login" className="flex items-center w-full">
+                  <Link to="/auth" className="flex items-center w-full">
                     <LogIn className="w-4 h-4 mr-2" />
                     Sign In
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="focus:bg-white/10 focus:text-white">
-                  <Link to="/signup" className="flex items-center w-full">
+                  <Link to="/auth" className="flex items-center w-full">
                     <UserPlus className="w-4 h-4 mr-2" />
                     Create Account
                   </Link>
