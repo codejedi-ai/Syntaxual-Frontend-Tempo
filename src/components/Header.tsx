@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -15,21 +15,11 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
   const { user, loading } = useAuth();
   
   const navItems = [
-    { label: "Home", id: "hero", path: "/" },
-    { label: "Features", id: "features", path: "/" },
-    { label: "News", id: "news", path: "/news" },
-    { label: "Pricing", id: "pricing", path: "/pricing" },
-    { label: "About", id: "about", path: "/" },
+    { label: "Home", path: "/" },
+    { label: "News", path: "/news" },
+    { label: "Pricing", path: "/pricing" },
+    { label: "Dashboard", path: "/dashboard" },
   ];
-
-  const handleClick = (id: string, path: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    if (path === "/pricing" || path === "/news") {
-      window.location.href = path;
-    } else if (onNavItemClick) {
-      onNavItemClick(id);
-    }
-  };
 
   return (
     <header className={cn("fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10", className)}>
@@ -43,14 +33,13 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
           </Link>
           <nav className="hidden md:flex space-x-6 ml-8">
             {navItems.map((item) => (
-              <a
-                key={item.id}
-                href={item.path === "/pricing" || item.path === "/news" ? item.path : `#${item.id}`}
-                onClick={(e) => handleClick(item.id, item.path, e)}
+              <Link
+                key={item.path}
+                to={item.path}
                 className="text-white/70 hover:text-white transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
