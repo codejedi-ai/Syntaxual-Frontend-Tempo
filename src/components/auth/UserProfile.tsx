@@ -39,9 +39,9 @@ export const UserProfile: React.FC = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-8 w-8">
-            <AvatarImage src={user.photoURL || undefined} alt={user.displayName || "User"} />
+            <AvatarImage src={user.picture || undefined} alt={user.name || "User"} />
             <AvatarFallback>
-              {user.displayName ? getInitials(user.displayName) : <User className="h-4 w-4" />}
+              {user.name ? getInitials(user.name) : <User className="h-4 w-4" />}
             </AvatarFallback>
           </Avatar>
         </Button>
@@ -50,7 +50,7 @@ export const UserProfile: React.FC = () => {
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">
-              {user.displayName || "User"}
+              {user.name || "User"}
             </p>
             <p className="text-xs leading-none text-muted-foreground">
               {user.email}
