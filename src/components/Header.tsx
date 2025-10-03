@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { UserProfile } from "@/components/auth/UserProfile";
-import { User } from "lucide-react";
 
 interface HeaderProps {
   className?: string;
@@ -12,7 +11,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
-  const { user, loading } = useAuth();
+  const { user, loading, loginWithRedirect } = useAuth();
 
   const navItems = [
     { label: "News", path: "/news" },
@@ -47,15 +46,13 @@ const Header: React.FC<HeaderProps> = ({ className, onNavItemClick }) => {
           ) : user ? (
             <UserProfile />
           ) : (
-            <Link to="/auth">
-              <Button
-                variant="outline"
-                className="bg-gradient-to-r from-fuchsia-600/20 to-pink-600/20 border-fuchsia-500/30 text-white hover:bg-gradient-to-r hover:from-fuchsia-600/40 hover:to-pink-600/40 hover:border-fuchsia-400/50 backdrop-blur-sm transition-all duration-200"
-              >
-                <User className="w-4 h-4 mr-2" />
-                Account
-              </Button>
-            </Link>
+            <Button
+              onClick={() => loginWithRedirect()}
+              variant="outline"
+              className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 border-blue-500/30 text-white hover:bg-gradient-to-r hover:from-blue-600/40 hover:to-cyan-600/40 hover:border-blue-400/50 backdrop-blur-sm transition-all duration-200"
+            >
+              Login
+            </Button>
           )}
         </div>
       </div>
