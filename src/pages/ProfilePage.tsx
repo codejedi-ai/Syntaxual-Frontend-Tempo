@@ -27,14 +27,14 @@ const ProfilePage: React.FC = () => {
     <DashboardLayout>
       <div className="max-w-4xl mx-auto space-y-6">
         <div>
-          <h1 className="text-3xl font-bold mb-2">Profile</h1>
+          <h1 className="text-3xl font-bold mb-2 text-white">Profile</h1>
           <p className="text-white/70">Your account information and settings</p>
         </div>
 
         <Card className="bg-gray-800/50 border-gray-700">
           <CardHeader>
-            <CardTitle>User Information</CardTitle>
-            <CardDescription>Your Auth0 profile details</CardDescription>
+            <CardTitle className="text-white">User Information</CardTitle>
+            <CardDescription className="text-white/70">Your Auth0 profile details</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="flex items-center gap-6">
@@ -45,7 +45,7 @@ const ProfilePage: React.FC = () => {
                 </AvatarFallback>
               </Avatar>
               <div className="space-y-2">
-                <h2 className="text-2xl font-bold">{user?.name || "User"}</h2>
+                <h2 className="text-2xl font-bold text-white">{user?.name || "User"}</h2>
                 <p className="text-white/70">{user?.email}</p>
                 {user?.email_verified && (
                   <Badge className="bg-green-600/20 text-green-400 border-green-600/30">
@@ -56,7 +56,7 @@ const ProfilePage: React.FC = () => {
             </div>
 
             <div className="pt-6 border-t border-gray-700">
-              <h3 className="text-lg font-semibold mb-4">Debug Information</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">Debug Information</h3>
               <div className="bg-gray-900/50 rounded-lg p-4 font-mono text-sm space-y-2">
                 <div className="grid grid-cols-[150px_1fr] gap-2">
                   <span className="text-white/50">User ID:</span>
@@ -90,7 +90,7 @@ const ProfilePage: React.FC = () => {
             </div>
 
             <div className="pt-6 border-t border-gray-700">
-              <h3 className="text-lg font-semibold mb-4">Full User Object</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">Full User Object</h3>
               <div className="bg-gray-900/50 rounded-lg p-4 overflow-auto max-h-96">
                 <pre className="text-xs text-cyan-400">
                   {JSON.stringify(user, null, 2)}
